@@ -9,9 +9,11 @@
  * - More code is transferred to the browser than in SSR mode.
  * - Optimizer/Serialization/Deserialization code is not exercised!
  */
-import { render, type RenderOptions } from "@builder.io/qwik";
-import Root from "./root";
+// eslint-disable-next-line unicorn/prevent-abbreviations
+import { render, type RenderOptions } from '@builder.io/qwik';
 
-export default function (opts: RenderOptions) {
-  return render(document, <Root />, opts);
+import Root from './root';
+
+export default function (options: RenderOptions) {
+  return render(document, <Root />, options);
 }

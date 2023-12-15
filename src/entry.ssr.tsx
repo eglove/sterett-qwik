@@ -13,18 +13,20 @@
 import {
   renderToStream,
   type RenderToStreamOptions,
-} from "@builder.io/qwik/server";
-import { manifest } from "@qwik-client-manifest";
-import Root from "./root";
+} from '@builder.io/qwik/server';
+// eslint-disable-next-line import/no-unresolved
+import { manifest } from '@qwik-client-manifest';
 
-export default function (opts: RenderToStreamOptions) {
+import Root from './root';
+
+export default function (options: RenderToStreamOptions) {
   return renderToStream(<Root />, {
     manifest,
-    ...opts,
+    ...options,
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
-      lang: "en-us",
-      ...opts.containerAttributes,
+      lang: 'en-us',
+      ...options.containerAttributes,
     },
   });
 }
