@@ -1,6 +1,6 @@
 /** @jsxImportSource react **/
-import { Image } from '@nextui-org/image';
 import type { JSX } from 'react';
+import { SanityImage as SImage } from 'sanity-image';
 import type { z } from 'zod';
 
 import type { imageAssetSchema } from '../../sanity/queries/schema';
@@ -23,12 +23,15 @@ export function SanityPortableImage({
 
   return (
     <div className="grid place-items-center">
-      <Image
+      <SImage
         alt={altText}
-        className="relative max-h-96 object-contain"
-        height={image.metadata.dimensions.height}
-        src={imageUrl}
-        width={image.metadata.dimensions.width}
+        baseUrl={imageUrl}
+        className="relative max-h-96"
+        crop={image.crop}
+        hotspot={image.hotspot}
+        id={image._id}
+        mode="contain"
+        preview={image.metadata.lqip}
       />
     </div>
   );

@@ -35,6 +35,9 @@ dependencies:
   react-big-calendar:
     specifier: ^1.8.5
     version: 1.8.5(react-dom@18.2.0)(react@18.2.0)
+  sanity-image:
+    specifier: ^0.1.7
+    version: 0.1.7(react@18.2.0)
   tailwind-merge:
     specifier: ^2.1.0
     version: 2.1.0
@@ -7685,6 +7688,14 @@ packages:
       get-intrinsic: 1.2.2
       is-regex: 1.1.4
     dev: true
+
+  /sanity-image@0.1.7(react@18.2.0):
+    resolution: {integrity: sha512-4HRRWGIJPHvJBpezG22gHRVdTWG4R+Xk4Pj0W1utftgpYvBn6O0dekGEP/3B6rPWhGSKcZrWDbu9zNaAl0lBPQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}

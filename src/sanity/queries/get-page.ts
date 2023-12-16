@@ -18,8 +18,12 @@ export async function getPage(
     content[] {
       ...,
       asset-> {
+        _id,
         url,
+        hotspot,
+        crop,
         metadata {
+          lqip,
           dimensions {
             height,
             width,

@@ -7,7 +7,7 @@ import { getGalleryImagesAmount } from '../sanity/queries/get-gallery-images-amo
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   cacheControl({
-    maxAge: 86_400,
+    maxAge: 60,
     staleWhileRevalidate: 86_400,
   });
 };
