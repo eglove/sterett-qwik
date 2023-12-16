@@ -2,7 +2,7 @@ import { component$, Slot } from '@builder.io/qwik';
 import type { RequestHandler } from '@builder.io/qwik-city';
 import { routeLoader$, useNavigate } from '@builder.io/qwik-city';
 
-import { Navigation } from '../integrations/navigation';
+import { Navigation } from '../integrations/react/navigation';
 import { getGalleryImagesAmount } from '../sanity/queries/get-gallery-images-amount';
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {

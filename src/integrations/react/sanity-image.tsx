@@ -3,7 +3,7 @@ import { Image } from '@nextui-org/image';
 import type { JSX } from 'react';
 import type { z } from 'zod';
 
-import type { imageAssetSchema } from '../sanity/queries/schema';
+import type { imageAssetSchema } from '../../sanity/queries/schema';
 
 type SanityPortableImageProperties = {
   readonly altText: string;

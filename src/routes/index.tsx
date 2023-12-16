@@ -4,7 +4,7 @@ import { routeLoader$ } from '@builder.io/qwik-city';
 import lodash from 'lodash';
 
 import { Container } from '../components/container';
-import { SanityContent } from '../integrations/sanity-content';
+import { SanityContent } from '../integrations/react/sanity-content';
 import { getPage } from '../sanity/queries/get-page';
 
 export const head: DocumentHead = {

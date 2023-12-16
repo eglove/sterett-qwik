@@ -6,7 +6,7 @@ import type { TypedObject } from '@portabletext/types';
 import type { JSX } from 'react';
 import type { z } from 'zod';
 
-import type { imageAssetSchema } from '../sanity/queries/schema';
+import type { imageAssetSchema } from '../../sanity/queries/schema';
 import { SanityPortableImage } from './sanity-image';
 
 type SanityContentProperties = {
@@ -32,7 +32,9 @@ const potableTextComponents: Partial<PortableTextReactComponents> = {
   },
 };
 
-function RSanityContent({ value }: SanityContentProperties): JSX.Element {
+export function RSanityContent({
+  value,
+}: SanityContentProperties): JSX.Element {
   return (
     <div className="prose">
       <PortableText components={potableTextComponents} value={value} />
