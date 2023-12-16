@@ -11,7 +11,11 @@
     "extends": [
       "ethang",
       "plugin:qwik/recommended"
-    ]
+    ],
+    "rules": {
+      "react/no-unknown-property": "off",
+      "qwik/no-react-props": "off"
+    }
   },
   "scripts": {
     "build": "qwik build",
@@ -29,20 +33,33 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.3.1",
     "@builder.io/qwik-city": "^1.3.1",
+    "@builder.io/qwik-react": "0.5.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.0",
+    "@mui/x-data-grid": "^6.4.0",
     "@types/eslint": "^8.44.8",
     "@types/node": "^20.10.3",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-ethang": "^11.6.0",
     "eslint-plugin-qwik": "^1.3.1",
     "postcss": "^8.4.31",
     "prettier-plugin-tailwindcss": "^0.5.4",
-    "tailwindcss": "3.3.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.6",
     "typescript": "^5.3.2",
     "undici": "^5.26.0",
     "vite": "^5.0.6",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.2.9",
+    "framer-motion": "^10.16.16"
   }
 }
