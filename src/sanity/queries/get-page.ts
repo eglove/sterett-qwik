@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
+import { sterettSanityClient } from '../sterett-sanity-client';
 import { imageAssetSchema, typedObjectSchema } from './schema';
 
 export const getPageSchema = z.object({
@@ -12,7 +12,7 @@ export const getPageSchema = z.object({
 export async function getPage(
   slug: string,
 ): Promise<z.output<typeof getPageSchema> | undefined> {
-  const pageQuery = `*[_type == "page" && slug.current == $slug && ${NO_DRAFTS}]{
+  const pageQuery = `*[_type == "page" && slug.current == $slug]{
     _id, 
     title, 
     content[] {
