@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+import type { RouteNavigate } from '@builder.io/qwik-city';
 import { qwikify$ } from '@builder.io/qwik-react';
 import {
   Navbar,
@@ -8,7 +9,7 @@ import {
   NavbarMenu,
   NavbarMenuToggle,
 } from '@nextui-org/navbar';
-import { Link } from '@nextui-org/react';
+import { Link, NextUIProvider } from '@nextui-org/react';
 import { useState } from 'react';
 
 const navUrls = [
@@ -36,76 +37,83 @@ const navUrls = [
 
 type NavigationProperties = {
   readonly imagesAmount: number;
+  readonly navigate: RouteNavigate;
   readonly pathName: string;
 };
 
-function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
+function RNavigation({
+  imagesAmount,
+  navigate,
+  pathName,
+}: NavigationProperties) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <Navbar
-      className="mx-auto max-w-7xl rounded-lg bg-white shadow-md shadow-sky-50"
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={(isOpen): void => {
-        return setIsMenuOpen(isOpen ?? false);
-      }}
-    >
-      <NavbarContent className="pl-0">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="text-foreground md:hidden"
-        />
-        <NavbarBrand>
-          <h1 className="m-2 border-b-2 border-sky-700 text-sm font-bold text-sky-700 sm:text-2xl">
-            Sterett Creek Village Trustee
-          </h1>
-        </NavbarBrand>
-      </NavbarContent>
-      <NavbarContent className="hidden gap-4 md:flex md:flex-wrap">
-        {navUrls.map(item => {
-          return (
+    <NextUIProvider navigate={navigate}>
+      <Navbar
+        className="mx-auto max-w-7xl rounded-lg bg-white shadow-md shadow-sky-50"
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={(isOpen): void => {
+          return setIsMenuOpen(isOpen ?? false);
+        }}
+      >
+        <NavbarContent className="pl-0">
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            className="text-foreground md:hidden"
+          />
+          <NavbarBrand>
+            <h1 className="m-2 border-b-2 border-sky-700 text-sm font-bold text-sky-700 sm:text-2xl">
+              Sterett Creek Village Trustee
+            </h1>
+          </NavbarBrand>
+        </NavbarContent>
+        <NavbarContent className="hidden gap-4 md:flex md:flex-wrap">
+          {navUrls.map(item => {
+            return (
+              <NavbarItem
+                className="text-sky-700"
+                isActive={pathName === item.url}
+                key={item.name}
+              >
+                <Link href={item.url}>{item.name}</Link>
+              </NavbarItem>
+            );
+          })}
+          {imagesAmount > 0 && (
             <NavbarItem
               className="text-sky-700"
-              isActive={pathName === item.url}
-              key={item.name}
+              isActive={pathName === '/gallery'}
+              key="gallery"
             >
-              <Link href={item.url}>{item.name}</Link>
+              <Link href="/gallery">Pictures</Link>
             </NavbarItem>
-          );
-        })}
-        {imagesAmount > 0 && (
-          <NavbarItem
-            className="text-sky-700"
-            isActive={pathName === '/gallery'}
-            key="gallery"
-          >
-            <Link href="/gallery">Pictures</Link>
-          </NavbarItem>
-        )}
-      </NavbarContent>
-      <NavbarMenu className="mt-4 rounded-lg">
-        {navUrls.map(item => {
-          return (
+          )}
+        </NavbarContent>
+        <NavbarMenu className="mt-4 rounded-lg">
+          {navUrls.map(item => {
+            return (
+              <NavbarItem
+                className="text-sky-700"
+                isActive={pathName === item.url}
+                key={item.name}
+              >
+                <Link href={item.url}>{item.name}</Link>
+              </NavbarItem>
+            );
+          })}
+          {imagesAmount > 0 && (
             <NavbarItem
               className="text-sky-700"
-              isActive={pathName === item.url}
-              key={item.name}
+              isActive={pathName === '/gallery'}
+              key="gallery"
             >
-              <Link href={item.url}>{item.name}</Link>
+              <Link href="/gallery">Pictures</Link>
             </NavbarItem>
-          );
-        })}
-        {imagesAmount > 0 && (
-          <NavbarItem
-            className="text-sky-700"
-            isActive={pathName === '/gallery'}
-            key="gallery"
-          >
-            <Link href="/gallery">Pictures</Link>
-          </NavbarItem>
-        )}
-      </NavbarMenu>
-    </Navbar>
+          )}
+        </NavbarMenu>
+      </Navbar>
+    </NextUIProvider>
   );
 }
 
