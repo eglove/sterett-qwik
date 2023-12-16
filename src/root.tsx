@@ -13,6 +13,7 @@ export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
+        <meta content="same-origin" name="view-transition" />
         <meta charSet="utf-8" />
         <meta content="width=device-width" name="viewport" />
         <link href="/favicon.ico" rel="icon" type="image/svg+xml" />
