@@ -15,7 +15,11 @@ export function SanityPortableImage({
   altText,
   image,
 }: SanityPortableImageProperties): JSX.Element {
-  const imageUrl = imageBuilder.image(image.url).format('webp').url();
+  const imageUrl = imageBuilder
+    .image(image.url)
+    .maxWidth(600)
+    .format('webp')
+    .url();
 
   return (
     <div className="grid place-items-center">
