@@ -6,6 +6,7 @@ import type { JSX } from 'react';
 
 import { containerClass } from '../../components/container';
 import type { getTrustees } from '../../sanity/queries/get-trustees';
+import { imageBuilder } from '../../sanity/sterett-sanity-client';
 
 export type AvatarColor =
   | 'warning'
@@ -27,6 +28,13 @@ export function RTrustees({
     <div className={containerClass}>
       <div className="grid gap-4 md:grid-cols-3">
         {trustees.map((trustee, index) => {
+          const imageUrl = imageBuilder
+            .image(trustee.image.asset.url)
+            .height(128)
+            .width(128)
+            .format('webp')
+            .url();
+
           return (
             <div
               className="mb-4 w-full gap-4 border-b-2 pb-4"
@@ -40,7 +48,7 @@ export function RTrustees({
                   color: colorValues[index] ?? 'default',
                   isBordered: true,
                   size: 'lg',
-                  src: trustee.image.asset.url,
+                  src: imageUrl,
                 }}
                 description={
                   <>
