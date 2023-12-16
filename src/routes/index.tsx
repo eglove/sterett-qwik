@@ -14,7 +14,7 @@ export const head: DocumentHead = {
       name: 'description',
     },
   ],
-  title: 'Home',
+  title: 'Sterett Creek Village Trustee | Home',
 };
 
 export const useHomepage = routeLoader$(() => {

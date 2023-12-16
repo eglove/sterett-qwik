@@ -17,6 +17,10 @@ export const useImagesAmount = routeLoader$(() => {
 });
 
 export const usePathname = routeLoader$(({ pathname }) => {
+  if (pathname.at(-1) === '/' && pathname !== '/') {
+    return pathname.slice(0, -1);
+  }
+
   return pathname;
 });
 

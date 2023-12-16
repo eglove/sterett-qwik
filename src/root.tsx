@@ -10,18 +10,32 @@ import {
 import { RouterHead } from './components/router-head/router-head';
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
-
   return (
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-        <link href="/manifest.json" rel="manifest" />
+        <meta content="width=device-width" name="viewport" />
+        <link href="/favicon.ico" rel="icon" type="image/svg+xml" />
+        <link href="/site.webmanifest" rel="manifest" />
+        <link
+          href="/apple-touch-icon.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
+          type="image/png"
+        />
+        <link
+          href="/favicon-32x32.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          href="/favicon-16x16.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link href="/favicon.ico" rel="shortcut icon" />
         <RouterHead />
         <ServiceWorkerRegister />
       </head>
