@@ -121,4 +121,6 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
   );
 }
 
-export const CalendarView = qwikify$(RCalendar, { eagerness: 'load' });
+export const CalendarView = qwikify$(RCalendar, {
+  eagerness: 'load',
+});
