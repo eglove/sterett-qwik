@@ -41,7 +41,7 @@
     "@types/eslint": "^8.56.0",
     "@types/lodash": "^4.14.202",
     "@types/luxon": "^3.3.7",
-    "@types/node": "^20.10.5",
+    "@types/node": "^20.10.6",
     "@types/react": "^18.2.46",
     "@types/react-big-calendar": "^1.8.7",
     "@types/react-dom": "^18.2.18",
