@@ -63,7 +63,6 @@ export const sortNewsAndEvents = (
     // eslint-disable-next-line unicorn/prefer-spread
   > = lodash.concat(eventsNews.events ?? [], eventsNews.updates ?? []);
 
-  // eslint-disable-next-line functional/immutable-data
   return merged.sort((a, b) => {
     const aDate = 'startsAt' in a ? new Date(a.startsAt) : new Date(a.date);
     const bDate = 'startsAt' in b ? new Date(b.startsAt) : new Date(b.date);

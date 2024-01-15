@@ -5,7 +5,7 @@ import { routeLoader$ } from '@builder.io/qwik-city';
 import { Navigation } from '../integrations/react/navigation';
 import { getGalleryImagesAmount } from '../sanity/queries/get-gallery-images-amount';
 
-export const onGet: RequestHandler = async ({ cacheControl }) => {
+export const onGet: RequestHandler = ({ cacheControl }) => {
   cacheControl({
     maxAge: 60,
     staleWhileRevalidate: 86_400,

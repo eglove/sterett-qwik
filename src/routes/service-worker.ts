@@ -12,12 +12,12 @@ import { setupServiceWorker } from '@builder.io/qwik-city/service-worker';
 
 setupServiceWorker();
 
-// eslint-disable-next-line no-undef
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 addEventListener('install', () => {
   return self.skipWaiting();
 });
 
-// eslint-disable-next-line no-undef
+// eslint-disable-next-line @typescript-eslint/no-misused-promises
 addEventListener('activate', () => {
   return self.clients.claim();
 });
