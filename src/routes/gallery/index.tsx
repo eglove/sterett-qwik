@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
+// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { Image } from '@nextui-org/image';
 
@@ -21,6 +22,7 @@ export const useImages = routeLoader$(() => {
   return getGalleryImages();
 });
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 const QImage = qwikify$(Image);
 
 export default component$(() => {
@@ -32,10 +34,10 @@ export default component$(() => {
         {data.value.map(image => {
           return (
             <QImage
+              key={image.image.asset.url}
               alt={image.description}
               className="relative h-auto max-w-full rounded-lg"
               height={Number(image.image.asset.metadata.dimensions.height)}
-              key={image.image.asset.url}
               src={image.image.asset.url}
               width={Number(image.image.asset.metadata.dimensions.width)}
             />

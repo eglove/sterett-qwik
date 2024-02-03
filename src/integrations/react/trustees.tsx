@@ -1,4 +1,5 @@
 /** @jsxImportSource react **/
+// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { Link } from '@nextui-org/link';
 import { User } from '@nextui-org/user';
@@ -37,8 +38,8 @@ export function RTrustees({
 
           return (
             <div
-              className="mb-4 w-full gap-4 border-b-2 pb-4"
               key={trustee._id}
+              className="mb-4 w-full gap-4 border-b-2 pb-4"
             >
               <User
                 className="gap-4"
@@ -74,4 +75,5 @@ export function RTrustees({
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const Trustees = qwikify$(RTrustees, { eagerness: 'load' });

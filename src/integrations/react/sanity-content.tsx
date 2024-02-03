@@ -1,4 +1,5 @@
 /** @jsxImportSource react **/
+// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import type { PortableTextReactComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
@@ -42,4 +43,5 @@ export function RSanityContent({
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const SanityContent = qwikify$(RSanityContent, { eagerness: 'visible' });

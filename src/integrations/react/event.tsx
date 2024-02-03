@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
@@ -26,6 +27,8 @@ const eventDateFormat = (date: string): string => {
   });
 };
 
+const happeningNow = 'Happening Now!';
+
 export function REvent({ data, usedDates }: EventProperties): ReactNode {
   const isInRange =
     now.getTime() > new Date(data.startsAt).getTime() &&
@@ -38,9 +41,9 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
     usedDates.add(relativeDate);
   }
 
-  if (!usedDates.has('Happening Now!') && isInRange) {
+  if (!usedDates.has(happeningNow) && isInRange) {
     isDateShowing = true;
-    usedDates.add('Happening Now!');
+    usedDates.add(happeningNow);
   }
 
   return (
@@ -48,7 +51,7 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
       {isDateShowing && (
         <Card className="text-lg font-bold">
           <CardBody>
-            {isInRange ? 'Happening Now!' : getRelativeDate(data.startsAt)}
+            {isInRange ? happeningNow : getRelativeDate(data.startsAt)}
           </CardBody>
         </Card>
       )}
@@ -79,4 +82,5 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const Event = qwikify$(REvent);

@@ -1,4 +1,5 @@
 /** @jsxImportSource react */
+// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import {
   Navbar,
@@ -65,9 +66,9 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         {navUrls.map(item => {
           return (
             <NavbarItem
+              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
-              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -75,9 +76,9 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         })}
         {imagesAmount > 0 && (
           <NavbarItem
+            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
-            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -87,9 +88,9 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         {navUrls.map(item => {
           return (
             <NavbarItem
+              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
-              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -97,9 +98,9 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         })}
         {imagesAmount > 0 && (
           <NavbarItem
+            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
-            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -109,4 +110,5 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const Navigation = qwikify$(RNavigation, { eagerness: 'load' });
