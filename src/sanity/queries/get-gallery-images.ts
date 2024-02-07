@@ -1,4 +1,4 @@
-import { shuffle } from 'lodash';
+import lodash from 'lodash';
 import { z } from 'zod';
 
 import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
@@ -24,5 +24,5 @@ export const getGalleryImages = async (): Promise<
       imagesQuery,
     );
 
-  return shuffle(images);
+  return lodash.shuffle(images);
 };

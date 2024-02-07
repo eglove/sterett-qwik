@@ -1,5 +1,4 @@
 /** @jsxImportSource react */
-// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
 import { Divider } from '@nextui-org/divider';
@@ -33,5 +32,4 @@ export function RNewsUpdate({ data }: NewsUpdateProperties): ReactNode {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const NewsUpdate = qwikify$(RNewsUpdate);

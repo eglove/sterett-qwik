@@ -1,5 +1,4 @@
 /** @jsxImportSource react */
-// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { CalendarDaysIcon } from '@heroicons/react/24/solid';
 import { Card, CardBody, CardHeader } from '@nextui-org/card';
@@ -82,5 +81,4 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const Event = qwikify$(REvent);

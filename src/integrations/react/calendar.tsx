@@ -1,7 +1,6 @@
 /** @jsxImportSource react */
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { Button } from '@nextui-org/button';
 import {
@@ -122,7 +121,6 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const CalendarView = qwikify$(RCalendar, {
   eagerness: 'load',
 });

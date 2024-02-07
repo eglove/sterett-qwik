@@ -1,5 +1,4 @@
 /** @jsxImportSource react */
-// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import {
   Navbar,
@@ -110,5 +109,4 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 export const Navigation = qwikify$(RNavigation, { eagerness: 'load' });

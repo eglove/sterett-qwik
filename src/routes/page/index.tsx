@@ -1,7 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
-// @ts-expect-error allow no types
 import { qwikify$ } from '@builder.io/qwik-react';
 import { Link } from '@nextui-org/react';
 
@@ -22,7 +21,6 @@ export const usePages = routeLoader$(() => {
   return getAllPages();
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment
 const QLink = qwikify$(Link);
 
 export default component$(() => {
