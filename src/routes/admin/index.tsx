@@ -1,5 +1,10 @@
 import type { RequestHandler } from '@builder.io/qwik-city';
+import { HTTP_STATUS } from '@ethang/toolbelt/constants/http';
 
 export const onGet: RequestHandler = ({ redirect }) => {
-  throw redirect(302, 'https://admin.sterettcreekvillagetrustee.com/');
+  // eslint-disable-next-line @typescript-eslint/no-throw-literal
+  throw redirect(
+    HTTP_STATUS.FOUND,
+    'https://admin.sterettcreekvillagetrustee.com/',
+  );
 };

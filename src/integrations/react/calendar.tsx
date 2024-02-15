@@ -60,17 +60,17 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
   return (
     <>
       <Calendar
-        selectable
         className="min-h-screen w-full"
         defaultView="week"
         endAccessor="end"
         events={events}
         localizer={localizer}
+        onSelectEvent={handleSelectEvent}
+        onView={setClientView}
+        selectable
         startAccessor="start"
         view={clientView}
         views={calendarViews}
-        onSelectEvent={handleSelectEvent}
-        onView={setClientView}
       />
       {selectedEvent !== undefined && (
         <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -100,11 +100,11 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
                         })}
                       </p>
                     </div>
-                    {selectedEvent.description && (
+                    {selectedEvent.description ? (
                       <RSanityContent
                         value={selectedEvent.description as TypedObject}
                       />
-                    )}
+                    ) : null}
                   </ModalBody>
                   <ModalFooter>
                     <Button color="primary" onClick={onClose}>

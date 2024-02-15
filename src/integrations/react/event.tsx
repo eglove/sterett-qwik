@@ -47,13 +47,13 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
 
   return (
     <Fragment key={data._id}>
-      {isDateShowing && (
+      {isDateShowing ? (
         <Card className="text-lg font-bold">
           <CardBody>
             {isInRange ? happeningNow : getRelativeDate(data.startsAt)}
           </CardBody>
         </Card>
-      )}
+      ) : null}
       <Card className="h-max w-full bg-sky-200" id={data._id}>
         <CardHeader className="block">
           <strong className="flex flex-wrap gap-2">

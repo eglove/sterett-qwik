@@ -17,7 +17,7 @@ export const head: DocumentHead = {
   title: 'Sterett Creek Village Trustee | Pages',
 };
 
-export const usePages = routeLoader$(() => {
+export const usePages = routeLoader$(async () => {
   return getAllPages();
 });
 
@@ -30,11 +30,11 @@ export default component$(() => {
     <Container>
       {data.value.map(page => {
         return (
-          <div key={page._id} class="w-full">
+          <div class="w-full" key={page._id}>
             <QLink
-              key={page._id}
               className="underline"
               href={`/page/${page.slug.current}`}
+              key={page._id}
             >
               {page.title}
             </QLink>

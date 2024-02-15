@@ -9,7 +9,8 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/navbar';
 import { Link } from '@nextui-org/react';
-import { useState } from 'react';
+import type { JSX } from 'react';
+import { useCallback, useState } from 'react';
 
 const navUrls = [
   {
@@ -39,16 +40,24 @@ type NavigationProperties = {
   readonly pathName: string;
 };
 
-function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
+// eslint-disable-next-line max-lines-per-function
+function RNavigation({
+  pathName,
+  imagesAmount,
+}: NavigationProperties): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const MIN_IMAGES = 1;
+
+  const toggleIsOpen = useCallback((isOpen: boolean): void => {
+    setIsMenuOpen(isOpen);
+  }, []);
 
   return (
     <Navbar
       className="mx-auto max-w-7xl rounded-lg bg-white shadow-md shadow-sky-50"
       isMenuOpen={isMenuOpen}
-      onMenuOpenChange={(isOpen): void => {
-        return setIsMenuOpen(isOpen ?? false);
-      }}
+      onMenuOpenChange={toggleIsOpen}
     >
       <NavbarContent className="pl-0">
         <NavbarMenuToggle
@@ -56,6 +65,7 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
           className="text-foreground md:hidden"
         />
         <NavbarBrand>
+          {/* eslint-disable-next-line react/jsx-max-depth */}
           <h1 className="m-2 border-b-2 border-sky-700 text-sm font-bold text-sky-700 sm:text-2xl">
             Sterett Creek Village Trustee
           </h1>
@@ -65,19 +75,19 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         {navUrls.map(item => {
           return (
             <NavbarItem
-              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
+              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
           );
         })}
-        {imagesAmount > 0 && (
+        {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
-            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
+            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -87,19 +97,19 @@ function RNavigation({ pathName, imagesAmount }: NavigationProperties) {
         {navUrls.map(item => {
           return (
             <NavbarItem
-              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
+              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
           );
         })}
-        {imagesAmount > 0 && (
+        {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
-            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
+            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>

@@ -9,17 +9,18 @@ import type { getTrustees } from '../../sanity/queries/get-trustees';
 import { imageBuilder } from '../../sanity/sterett-sanity-client';
 
 export type AvatarColor =
-  | 'warning'
-  | 'secondary'
   | 'danger'
   | 'primary'
-  | 'success';
+  | 'secondary'
+  | 'success'
+  | 'warning';
 
 type TrusteesProperties = {
   readonly colorValues: AvatarColor[];
   readonly trustees: Awaited<ReturnType<typeof getTrustees>>;
 };
 
+// eslint-disable-next-line max-lines-per-function
 export function RTrustees({
   trustees,
   colorValues,
@@ -28,21 +29,20 @@ export function RTrustees({
     <div className={containerClass}>
       <div className="grid gap-4 md:grid-cols-3">
         {trustees.map((trustee, index) => {
+          const IMAGE_SIZE = 128;
           const imageUrl = imageBuilder
             .image(trustee.image.asset.url)
-            .height(128)
-            .width(128)
+            .height(IMAGE_SIZE)
+            .width(IMAGE_SIZE)
             .format('webp')
             .url();
 
           return (
             <div
-              key={trustee._id}
               className="mb-4 w-full gap-4 border-b-2 pb-4"
+              key={trustee._id}
             >
               <User
-                className="gap-4"
-                name={trustee.name}
                 avatarProps={{
                   className: 'w-32 h-32',
                   color: colorValues[index] ?? 'default',
@@ -50,6 +50,7 @@ export function RTrustees({
                   size: 'lg',
                   src: imageUrl,
                 }}
+                className="gap-4"
                 description={
                   <>
                     <p>
@@ -65,6 +66,7 @@ export function RTrustees({
                     </p>
                   </>
                 }
+                name={trustee.name}
               />
             </div>
           );

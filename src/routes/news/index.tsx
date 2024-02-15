@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { routeLoader$ } from '@builder.io/qwik-city';
+import lodash from 'lodash';
 import type { z } from 'zod';
 
 import { Container } from '../../components/container';
@@ -22,7 +23,7 @@ export const head: DocumentHead = {
   title: 'Sterett Creek Village Trustee | News',
 };
 
-export const useNews = routeLoader$(() => {
+export const useNews = routeLoader$(async () => {
   return getNewsAndEvents();
 });
 
@@ -30,7 +31,7 @@ export default component$(() => {
   const data = useNews();
   const usedDates = new Set();
 
-  if (data.value.length === 0) {
+  if (lodash.isEmpty(data.value)) {
     return (
       <Container>
         <p>There&apos;s nothing here yet, check back later.</p>
@@ -42,19 +43,20 @@ export default component$(() => {
     <Container className="p-0">
       <div class="grid w-full gap-4 p-2">
         {data.value.map(datum => {
+          // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
           if ((datum as z.infer<typeof newsUpdateSchema>).date !== undefined) {
             return (
               <NewsUpdate
-                key={datum._id}
                 data={datum as z.infer<typeof newsUpdateSchema>}
+                key={datum._id}
               />
             );
           }
 
           return (
             <Event
-              key={datum._id}
               data={datum as z.output<typeof calendarEventSchema>}
+              key={datum._id}
               usedDates={usedDates}
             />
           );

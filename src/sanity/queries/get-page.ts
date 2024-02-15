@@ -39,5 +39,6 @@ export async function getPage(
     slug,
   });
 
-  return pages[0];
+  const FIRST = 0;
+  return pages[FIRST];
 }

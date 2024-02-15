@@ -28,6 +28,9 @@ export const getFiles = async (): Promise<GetFilesReturn> => {
   const covenantsQuery = `*[_type == "documentUpload" && category == "Covenant" && ${NO_DRAFTS}] | order(date desc){_id, title, file{asset->{url}}}`;
   const meetingMinutesQuery = `*[_type == "documentUpload" && category == "Meeting Minute" && ${NO_DRAFTS}] | order(date desc){_id, title, file{asset->{url}}}`;
 
+  const GENERAL_INDEX = 0;
+  const COVENANTS_INDEX = 1;
+  const MEETING_MINUTES_INDEX = 2;
   const data = await Promise.all([
     sterettSanityClient.fetch<GetFilesSchema>(generalQuery),
     sterettSanityClient.fetch<GetFilesSchema>(covenantsQuery),
@@ -35,8 +38,8 @@ export const getFiles = async (): Promise<GetFilesReturn> => {
   ]);
 
   return {
-    covenants: data[1],
-    general: data[0],
-    meetingMinutes: data[2],
+    covenants: data[COVENANTS_INDEX],
+    general: data[GENERAL_INDEX],
+    meetingMinutes: data[MEETING_MINUTES_INDEX],
   };
 };

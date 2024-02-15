@@ -12,13 +12,15 @@ export const onGet: RequestHandler = ({ cacheControl }) => {
   });
 };
 
-export const useImagesAmount = routeLoader$(() => {
+export const useImagesAmount = routeLoader$(async () => {
   return getGalleryImagesAmount();
 });
 
 export const usePathname = routeLoader$(({ pathname }) => {
-  if (pathname.at(-1) === '/' && pathname !== '/') {
-    return pathname.slice(0, -1);
+  const FIRST = 0;
+  const LAST = -1;
+  if (pathname.at(LAST) === '/' && pathname !== '/') {
+    return pathname.slice(FIRST, LAST);
   }
 
   return pathname;

@@ -21,8 +21,8 @@ export const newsUpdateSchema = z.object({
 });
 
 export const eventsNewsReturnSchema = z.object({
-  events: z.array(calendarEventSchema),
-  updates: z.array(newsUpdateSchema),
+  events: z.array(calendarEventSchema).optional(),
+  updates: z.array(newsUpdateSchema).optional(),
 });
 
 export type NewsAndEvents = (
@@ -57,11 +57,26 @@ export const getNewsAndEvents = async (): Promise<NewsAndEvents> => {
 export const sortNewsAndEvents = (
   eventsNews: z.infer<typeof eventsNewsReturnSchema>,
 ): NewsAndEvents => {
-  const merged: Array<
-    z.infer<typeof newsUpdateSchema> | z.infer<typeof calendarEventSchema>
-    // @ts-expect-error allow union type
-    // eslint-disable-next-line unicorn/prefer-spread
-  > = lodash.concat(eventsNews.events ?? [], eventsNews.updates ?? []);
+  const merged: (
+    | z.infer<typeof calendarEventSchema>
+    | z.infer<typeof newsUpdateSchema>
+  )[] = [];
+
+  if (!lodash.isEmpty(eventsNews.events)) {
+    merged.push(
+      eventsNews.events as unknown as
+        | z.infer<typeof calendarEventSchema>
+        | z.infer<typeof newsUpdateSchema>,
+    );
+  }
+
+  if (!lodash.isEmpty(eventsNews.updates)) {
+    merged.push(
+      eventsNews.updates as unknown as
+        | z.infer<typeof calendarEventSchema>
+        | z.infer<typeof newsUpdateSchema>,
+    );
+  }
 
   return merged.sort((a, b) => {
     const aDate = 'startsAt' in a ? new Date(a.startsAt) : new Date(a.date);

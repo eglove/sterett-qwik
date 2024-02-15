@@ -10,10 +10,11 @@
  * - Optimizer/Serialization/Deserialization code is not exercised!
  */
 // eslint-disable-next-line unicorn/prevent-abbreviations
+import type { RenderResult } from '@builder.io/qwik';
 import { render, type RenderOptions } from '@builder.io/qwik';
 
 import Root from './root';
 
-export default function (options: RenderOptions) {
+export default async function (options: RenderOptions): Promise<RenderResult> {
   return render(document, <Root />, options);
 }

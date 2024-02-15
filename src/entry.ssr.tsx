@@ -10,6 +10,7 @@
  * - npm run build
  *
  */
+import type { RenderToStreamResult } from '@builder.io/qwik/server';
 import {
   renderToStream,
   type RenderToStreamOptions,
@@ -19,7 +20,9 @@ import { manifest } from '@qwik-client-manifest';
 
 import Root from './root';
 
-export default function (options: RenderToStreamOptions) {
+export default async function (
+  options: RenderToStreamOptions,
+): Promise<RenderToStreamResult> {
   return renderToStream(<Root />, {
     manifest,
     ...options,

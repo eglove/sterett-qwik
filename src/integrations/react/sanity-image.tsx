@@ -15,9 +15,10 @@ export function SanityPortableImage({
   altText,
   image,
 }: SanityPortableImageProperties): JSX.Element {
+  const IMAGE_SIZE = 600;
   const imageUrl = imageBuilder
     .image(image.url)
-    .maxWidth(600)
+    .maxWidth(IMAGE_SIZE)
     .format('webp')
     .url();
 

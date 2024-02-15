@@ -21,7 +21,7 @@ import render from './entry.ssr';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
-  interface QwikCityPlatform extends PlatformCloudflarePages {}
+  type QwikCityPlatform = PlatformCloudflarePages;
 }
 
 const fetch = createQwikCity({ manifest, qwikCityPlan, render });

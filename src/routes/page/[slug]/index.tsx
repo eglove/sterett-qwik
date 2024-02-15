@@ -22,7 +22,7 @@ export const head: DocumentHead = ({ params }) => {
   };
 };
 
-export const usePage = routeLoader$(({ params }) => {
+export const usePage = routeLoader$(async ({ params }) => {
   return getPage(params.slug);
 });
 
