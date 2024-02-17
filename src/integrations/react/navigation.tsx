@@ -75,9 +75,9 @@ function RNavigation({
         {navUrls.map(item => {
           return (
             <NavbarItem
+              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
-              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -85,9 +85,9 @@ function RNavigation({
         })}
         {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
+            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
-            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -97,9 +97,9 @@ function RNavigation({
         {navUrls.map(item => {
           return (
             <NavbarItem
+              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
-              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -107,9 +107,9 @@ function RNavigation({
         })}
         {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
+            key="gallery"
             className="text-sky-700"
             isActive={pathName === '/gallery'}
-            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>

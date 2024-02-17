@@ -39,8 +39,8 @@ export function RTrustees({
 
           return (
             <div
-              className="mb-4 w-full gap-4 border-b-2 pb-4"
               key={trustee._id}
+              className="mb-4 w-full gap-4 border-b-2 pb-4"
             >
               <User
                 avatarProps={{

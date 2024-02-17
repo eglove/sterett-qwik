@@ -31,10 +31,10 @@ export default component$(() => {
             {/* eslint-disable-next-line react/jsx-max-depth */}
             <h2 class="text-2xl font-bold">Files</h2>
             {data.value.covenants.map(covenant => {
-              return <DocumentLink document={covenant} key={covenant._id} />;
+              return <DocumentLink key={covenant._id} document={covenant} />;
             })}
             {data.value.general.map(file => {
-              return <DocumentLink document={file} key={file._id} />;
+              return <DocumentLink key={file._id} document={file} />;
             })}
           </div>
         </div>
@@ -43,7 +43,7 @@ export default component$(() => {
           <h2 class="text-2xl font-bold">Meeting Minutes</h2>
           {data.value.meetingMinutes.map(meetingMinute => {
             return (
-              <DocumentLink document={meetingMinute} key={meetingMinute._id} />
+              <DocumentLink key={meetingMinute._id} document={meetingMinute} />
             );
           })}
         </div>

@@ -30,11 +30,11 @@ export default component$(() => {
     <Container>
       {data.value.map(page => {
         return (
-          <div class="w-full" key={page._id}>
+          <div key={page._id} class="w-full">
             <QLink
+              key={page._id}
               className="underline"
               href={`/page/${page.slug.current}`}
-              key={page._id}
             >
               {page.title}
             </QLink>

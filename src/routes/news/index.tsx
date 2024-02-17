@@ -47,16 +47,16 @@ export default component$(() => {
           if ((datum as z.infer<typeof newsUpdateSchema>).date !== undefined) {
             return (
               <NewsUpdate
-                data={datum as z.infer<typeof newsUpdateSchema>}
                 key={datum._id}
+                data={datum as z.infer<typeof newsUpdateSchema>}
               />
             );
           }
 
           return (
             <Event
-              data={datum as z.output<typeof calendarEventSchema>}
               key={datum._id}
+              data={datum as z.output<typeof calendarEventSchema>}
               usedDates={usedDates}
             />
           );
