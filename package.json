@@ -66,8 +66,8 @@
     "wrangler": "^3.28.3"
   },
   "dependencies": {
-    "@ethang/project-builder": "^1.1.22",
-    "@ethang/toolbelt": "^1.0.16",
+    "@ethang/project-builder": "^1.1.24",
+    "@ethang/toolbelt": "^1.0.18",
     "@heroicons/react": "^2.1.1",
     "@nextui-org/react": "^2.2.9",
     "@portabletext/react": "^3.0.11",
