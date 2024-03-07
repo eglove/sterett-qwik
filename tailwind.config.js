@@ -7,8 +7,14 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        beyonderOrange: '#FF8A01',
+        beyonderGreen: '#3B5C65',
+      }
+    },
   },
+  safelist: ['bg-beyonderGreen'],
   darkMode: 'class',
   plugins: [require("@tailwindcss/typography"), nextui()],
 };

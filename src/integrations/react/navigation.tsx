@@ -33,6 +33,10 @@ const navUrls = [
     name: 'Trustees',
     url: '/trustees',
   },
+  {
+    name: 'Beyonder',
+    url: '/beyonder',
+  },
 ];
 
 type NavigationProperties = {

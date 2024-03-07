@@ -8,6 +8,7 @@ import lodash from 'lodash';
 import { DateTime } from 'luxon';
 import type { ReactNode } from 'react';
 import { Fragment } from 'react';
+import { twMerge } from 'tailwind-merge';
 import type { z } from 'zod';
 
 import type { calendarEventSchema } from '../../sanity/queries/get-news-and-events';
@@ -15,7 +16,17 @@ import { getRelativeDate, now } from '../../util/date';
 import { RSanityContent } from './sanity-content';
 
 type EventProperties = {
+  // eslint-disable-next-line react/require-default-props
+  readonly colors?: {
+    eventBackground?: string;
+    eventText?: string;
+  };
   readonly data: z.output<typeof calendarEventSchema>;
+  // eslint-disable-next-line react/require-default-props
+  readonly iconMeta?: {
+    alt: string;
+    src: string;
+  };
   readonly usedDates: Set<unknown>;
 };
 
@@ -28,7 +39,12 @@ const eventDateFormat = (date: string): string => {
 
 const happeningNow = 'Happening Now!';
 
-export function REvent({ data, usedDates }: EventProperties): ReactNode {
+export function REvent({
+  data,
+  usedDates,
+  colors,
+  iconMeta,
+}: EventProperties): ReactNode {
   const isInRange =
     now.getTime() > new Date(data.startsAt).getTime() &&
     now.getTime() < new Date(data.endsAt).getTime();
@@ -45,19 +61,40 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
     usedDates.add(happeningNow);
   }
 
+  const backgroundColor = lodash.isNil(colors?.eventBackground)
+    ? 'bg-sky-200'
+    : `bg-${colors.eventBackground}`;
+  const textColor = lodash.isNil(colors?.eventText)
+    ? 'text-foreground'
+    : colors.eventText;
+
   return (
     <Fragment key={data._id}>
       {isDateShowing ? (
-        <Card className="text-lg font-bold">
+        <Card
+          className={twMerge('text-lg font-bold', backgroundColor, textColor)}
+        >
           <CardBody>
             {isInRange ? happeningNow : getRelativeDate(data.startsAt)}
           </CardBody>
         </Card>
       ) : null}
-      <Card className="h-max w-full bg-sky-200" id={data._id}>
-        <CardHeader className="block">
+      <Card
+        className={twMerge('my-4 h-max w-full', backgroundColor)}
+        id={data._id}
+      >
+        <CardHeader className={twMerge('block', textColor)}>
           <strong className="flex flex-wrap gap-2">
-            <CalendarDaysIcon height={24} width={24} />
+            {lodash.isNil(iconMeta) ? (
+              <CalendarDaysIcon height={24} width={24} />
+            ) : (
+              <img
+                alt={iconMeta.alt}
+                width={20}
+                height={20}
+                src={iconMeta.src}
+              />
+            )}
             <span>{eventDateFormat(data.startsAt)}</span>
             <span>
               {data.endsAt === data.startsAt
@@ -72,7 +109,10 @@ export function REvent({ data, usedDates }: EventProperties): ReactNode {
           <>
             <Divider />
             <CardBody>
-              <RSanityContent value={data.description as TypedObject} />
+              <RSanityContent
+                className={textColor}
+                value={data.description as TypedObject}
+              />
             </CardBody>
           </>
         )}

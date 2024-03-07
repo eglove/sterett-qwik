@@ -4,12 +4,15 @@ import type { PortableTextReactComponents } from '@portabletext/react';
 import { PortableText } from '@portabletext/react';
 import type { TypedObject } from '@portabletext/types';
 import type { JSX } from 'react';
+import { twMerge } from 'tailwind-merge';
 import type { z } from 'zod';
 
 import type { imageAssetSchema } from '../../sanity/queries/schema';
 import { SanityPortableImage } from './sanity-image';
 
 type SanityContentProperties = {
+  // eslint-disable-next-line react/require-default-props
+  readonly className?: string;
   readonly value: TypedObject;
 };
 
@@ -34,9 +37,10 @@ const potableTextComponents: Partial<PortableTextReactComponents> = {
 
 export function RSanityContent({
   value,
+  className,
 }: SanityContentProperties): JSX.Element {
   return (
-    <div className="prose">
+    <div className={twMerge('prose', className)}>
       <PortableText components={potableTextComponents} value={value} />
     </div>
   );
