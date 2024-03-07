@@ -50,7 +50,7 @@ export default component$(() => {
           <Link
             target="_blank"
             class="underline"
-            href="https://beyondercamp.com/"
+            href="https://beyondercamp.com/sterett-creek-warsaw-mo/"
           >
             BeyonderCamp.com
           </Link>
