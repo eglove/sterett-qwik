@@ -39,6 +39,7 @@ const eventDateFormat = (date: string): string => {
 
 const happeningNow = 'Happening Now!';
 
+// eslint-disable-next-line max-statements
 export function REvent({
   data,
   usedDates,
