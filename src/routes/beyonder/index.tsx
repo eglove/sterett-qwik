@@ -1,7 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { Link, routeLoader$ } from '@builder.io/qwik-city';
-import lodash from 'lodash';
 
 import { Container } from '../../components/container';
 import { Event } from '../../integrations/react/event';
@@ -28,14 +27,6 @@ export const useBeyonderEvents = routeLoader$(async () => {
 export default component$(() => {
   const data = useBeyonderEvents();
   const usedDates = new Set();
-
-  if (lodash.isEmpty(data.value)) {
-    return (
-      <Container>
-        <p>There&apos;s nothing here yet, check back later.</p>
-      </Container>
-    );
-  }
 
   return (
     <Container className="p-0">
