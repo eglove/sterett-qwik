@@ -46,12 +46,14 @@ export default component$(() => {
           height={32}
           src="/images/beyonder.png"
         />
-        <h2 class="text-xl font-bold">Beyonder</h2>
-        <h3 class="text-3xl font-bold">{'Christopher Hawn'.toUpperCase()}</h3>
-        <h4 class="text-2xl">General Manager</h4>
-        <h4 class="text-xl">BEYONDER Marine at Sterett Creek</h4>
+        <h2 class="text-lg font-bold sm:text-xl">Beyonder</h2>
+        <h3 class="text-2xl font-bold sm:text-3xl">
+          {'Christopher Hawn'.toUpperCase()}
+        </h3>
+        <h4 class="text-xl sm:text-2xl">General Manager</h4>
+        <h4 class="text-lg sm:text-xl">BEYONDER Marine at Sterett Creek</h4>
       </div>
-      <div class="mx-4 flex flex-wrap gap-4">
+      <div class="mx-4 flex flex-col flex-wrap gap-4 sm:flex-row">
         <div class="flex items-center gap-2">
           <LinkOutlineIcon width={20} height={20} />
           <Link
