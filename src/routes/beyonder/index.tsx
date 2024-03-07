@@ -14,11 +14,11 @@ import { getBeyonderEvents } from '../../sanity/queries/get-beyonder-events';
 export const head: DocumentHead = {
   meta: [
     {
-      content: 'News and Event Updates for Beyonder Camp',
+      content: 'Event Updates for Beyonder Camp',
       name: 'description',
     },
   ],
-  title: 'Beyonder Camp News and Events',
+  title: 'Beyonder Camp Events',
 };
 
 export const useBeyonderEvents = routeLoader$(async () => {
