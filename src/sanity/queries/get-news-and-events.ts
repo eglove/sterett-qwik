@@ -78,10 +78,12 @@ export const sortNewsAndEvents = (
     );
   }
 
-  return merged.sort((a, b) => {
-    const aDate = 'startsAt' in a ? new Date(a.startsAt) : new Date(a.date);
-    const bDate = 'startsAt' in b ? new Date(b.startsAt) : new Date(b.date);
+  return merged
+    .sort((a, b) => {
+      const aDate = 'startsAt' in a ? new Date(a.startsAt) : new Date(a.date);
+      const bDate = 'startsAt' in b ? new Date(b.startsAt) : new Date(b.date);
 
-    return aDate.getTime() - bDate.getTime();
-  });
+      return aDate.getTime() - bDate.getTime();
+    })
+    .flat();
 };
