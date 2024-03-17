@@ -39,7 +39,7 @@
     "@builder.io/qwik": "^1.5.1",
     "@builder.io/qwik-city": "^1.5.1",
     "@builder.io/qwik-react": "0.5.4",
-    "@portabletext/types": "^2.0.8",
+    "@portabletext/types": "^2.0.9",
     "@tailwindcss/typography": "^0.5.10",
     "@types/eslint": "^8.56.5",
     "@types/lodash": "^4.17.0",
@@ -70,7 +70,7 @@
     "@ethang/toolbelt": "^1.2.0",
     "@heroicons/react": "^2.1.1",
     "@nextui-org/react": "^2.2.10",
-    "@portabletext/react": "^3.0.11",
+    "@portabletext/react": "^3.0.12",
     "@sanity/client": "^6.15.5",
     "@sanity/image-url": "^1.0.2",
     "framer-motion": "^11.0.14",
@@ -79,7 +79,7 @@
     "moment": "^2.30.1",
     "react-big-calendar": "^1.11.2",
     "sanity-image": "^0.1.7",
-    "tailwind-merge": "^2.2.1",
+    "tailwind-merge": "^2.2.2",
     "zod": "^3.22.4"
   }
 }
