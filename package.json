@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@ethang/project-builder": "^1.1.28",
-    "@ethang/toolbelt": "^2.1.1",
+    "@ethang/toolbelt": "^2.1.2",
     "@heroicons/react": "^2.1.3",
     "@nextui-org/react": "^2.2.10",
     "@portabletext/react": "^3.0.15",
