@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ethang/project-builder':
-    specifier: ^1.1.31
-    version: 1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5)
+    specifier: ^1.1.33
+    version: 1.1.33(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5)
   '@ethang/toolbelt':
     specifier: ^2.2.0
     version: 2.2.0(@phensley/cldr@1.8.0)(@phensley/unit-converter@1.8.0)(@total-typescript/ts-reset@0.5.1)(idb@8.0.0)(lodash@4.17.21)(zod@3.22.4)
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^3.0.18
     version: 3.0.18(react@18.2.0)
   '@sanity/client':
-    specifier: ^6.15.13
-    version: 6.15.13
+    specifier: ^6.15.14
+    version: 6.15.14
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
@@ -972,16 +972,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@ethang/project-builder@1.1.31(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5):
-    resolution: {integrity: sha512-5VGCoezSzxTVQAJjTAXaoaN26hnL8dTzcIowkQeeDXACSRlG/MfQsEJBtRQHd49xTXmM0OZNhfOY9sVAI1xITg==}
+  /@ethang/project-builder@1.1.33(@ethang/util@3.1.1)(chalk@5.3.0)(inquirer@9.2.18)(rimraf@5.0.5)(simple-git@3.24.0)(tsup@8.0.2)(typescript@5.4.5):
+    resolution: {integrity: sha512-EA03fflkifc/JXPSaK+eahvzNdM2mf+z+C1z94+75kAVwDZKSDqRizhDg25vNNiwQ5YBlxFuM7REY0Yw0saRqw==}
     peerDependencies:
       '@ethang/util': ^3.1.1
       chalk: ^5.3.0
-      inquirer: ^9.2.17
+      inquirer: ^9.2.18
       rimraf: ^5.0.5
       simple-git: ^3.24.0
       tsup: ^8.0.2
-      typescript: ^5.4.3
+      typescript: ^5.4.5
     dependencies:
       '@ethang/util': 3.1.1
       chalk: 5.3.0
@@ -3864,13 +3864,13 @@ packages:
     resolution: {integrity: sha512-hw437iINopmQuxWPSUEvqE56NCPsiU8N4AYtfHmJFckclktzK9YQJieD3XkDCDH4OjL+C7zgPUh73R/nrcHrqw==}
     dev: true
 
-  /@sanity/client@6.15.13:
-    resolution: {integrity: sha512-1+BKnyRa7rTIAiVG/3xjiM6t+J6MW+px6oBwEEU/ZumGu7cpUTPQpiOTH/aLuUKbDtmRHq9lGmgpG0U7JrcUiw==}
+  /@sanity/client@6.15.14:
+    resolution: {integrity: sha512-GusjgP57Xm/CVqHBAVjv4jLSFD9Pu6KliNpHAQVRRQRKVZ5grl0Rd85UDowXziLFGD3OjHH3ssdQWXR3jzKGkA==}
     engines: {node: '>=14.18'}
     dependencies:
       '@sanity/eventsource': 5.0.1
       '@vercel/stega': 0.1.0
-      get-it: 8.4.21
+      get-it: 8.4.23
       rxjs: 7.8.1
     transitivePeerDependencies:
       - supports-color
@@ -6005,15 +6005,14 @@ packages:
       has-symbols: 1.0.3
       hasown: 2.0.2
 
-  /get-it@8.4.21:
-    resolution: {integrity: sha512-QKMQ0k3PLR/jEOm9ZEaQZaFNahewbYLV2U4WMRqyAriJn+rPfw4K0VMjYGse8L6rgosA2kw+gGxHmhPqKAxKSQ==}
+  /get-it@8.4.23:
+    resolution: {integrity: sha512-dmjxAuUmGC09pYc/tpaueuxg8SP7Z0HYeBspaWsnmHBaBNxWdPATrD+q9LIbQ04IYLmbqp7ORaKODoprOz+uBA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       debug: 4.3.4
       decompress-response: 7.0.0
       follow-redirects: 1.15.6(debug@4.3.4)
       into-stream: 6.0.0
-      is-plain-object: 5.0.0
       is-retry-allowed: 2.2.0
       is-stream: 2.0.1
       parse-headers: 2.0.5
@@ -6508,11 +6507,6 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
     dev: true
-
-  /is-plain-object@5.0.0:
-    resolution: {integrity: sha512-VRSzKkbMm5jMDoKLbltAkFQ5Qr7VDiTFGXxYFXXowVj387GeGNOCsOH6Msy00SGZ3Fp84b1Naa1psqgcCIEP5Q==}
-    engines: {node: '>=0.10.0'}
-    dev: false
 
   /is-reference@3.0.2:
     resolution: {integrity: sha512-v3rht/LgVcsdZa3O2Nqs+NMowLOxeOm7Ay9+/ARQ2F+qEoANRcqrjAZKGN0v8ymUetZGgkp26LTnGT7H0Qo9Pg==}
