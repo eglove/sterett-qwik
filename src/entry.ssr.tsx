@@ -20,7 +20,7 @@ import { manifest } from '@qwik-client-manifest';
 
 import Root from './root';
 
-export default async function (
+export default async function entry(
   options: RenderToStreamOptions,
 ): Promise<RenderToStreamResult> {
   return renderToStream(<Root />, {
