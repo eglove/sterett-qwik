@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ethang/project-builder':
-        specifier: ^1.1.37
-        version: 1.1.37(chalk@5.3.0)(inquirer@9.2.22)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.24.0)(tsup@8.0.2(postcss@8.4.38)(typescript@5.4.5))(typescript@5.4.5)
+        specifier: ^1.1.38
+        version: 1.1.38(chalk@5.3.0)(inquirer@9.2.22)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.24.0)(tsup@8.0.2(postcss@8.4.38)(typescript@5.4.5))(typescript@5.4.5)
       '@ethang/toolbelt':
         specifier: ^2.2.0
         version: 2.2.0(@phensley/cldr@1.8.1)(@phensley/unit-converter@1.8.1)(@total-typescript/ts-reset@0.5.1)(idb@8.0.0)(lodash@4.17.21)(zod@3.23.8)
@@ -667,8 +667,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@ethang/project-builder@1.1.37':
-    resolution: {integrity: sha512-V5e6U0pdJipRsmos3Fe11nckWDBpSRb22a0Jset3U4Uromiwe6AgorBopC2S5K8sDtKrf2P+X6eipCDEJ6vEfw==}
+  '@ethang/project-builder@1.1.38':
+    resolution: {integrity: sha512-JDEqHdF9jiCegApGEJYme0j/ZjpJnAk1sZPmDp033XWMrseax3Bw1mV78+56mO0npRPrkeKHI4oXaQrixgWUEg==}
     peerDependencies:
       chalk: ^5.3.0
       inquirer: ^9.2.22
@@ -5313,7 +5313,7 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@ethang/project-builder@1.1.37(chalk@5.3.0)(inquirer@9.2.22)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.24.0)(tsup@8.0.2(postcss@8.4.38)(typescript@5.4.5))(typescript@5.4.5)':
+  '@ethang/project-builder@1.1.38(chalk@5.3.0)(inquirer@9.2.22)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.24.0)(tsup@8.0.2(postcss@8.4.38)(typescript@5.4.5))(typescript@5.4.5)':
     dependencies:
       chalk: 5.3.0
       inquirer: 9.2.22
