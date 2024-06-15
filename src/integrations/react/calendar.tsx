@@ -60,6 +60,7 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
   return (
     <>
       <Calendar
+        selectable
         className="min-h-screen w-full"
         defaultView="week"
         endAccessor="end"
@@ -67,7 +68,6 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
         localizer={localizer}
         onSelectEvent={handleSelectEvent}
         onView={setClientView}
-        selectable
         startAccessor="start"
         view={clientView}
         views={calendarViews}

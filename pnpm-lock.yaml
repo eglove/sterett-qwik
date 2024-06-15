@@ -64,8 +64,8 @@ importers:
         specifier: 0.5.4
         version: 0.5.4(@builder.io/qwik@1.5.7(@types/node@20.14.2)(undici@6.19.0))(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@ethang/eslint-config':
-        specifier: ^17.0.4
-        version: 17.0.4(@eslint/js@9.5.0)(@tanstack/eslint-plugin-query@5.43.1(eslint@9.5.0)(typescript@5.4.5))(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint-plugin-astro@1.2.2(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-jsx-a11y@6.8.0(eslint@9.5.0))(eslint-plugin-n@17.9.0(eslint@9.5.0))(eslint-plugin-perfectionist@2.11.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2))(eslint-plugin-react-hooks@4.6.2(eslint@9.5.0))(eslint-plugin-react@7.34.2(eslint@9.5.0))(eslint-plugin-sonarjs@1.0.3(eslint@9.5.0))(eslint-plugin-unicorn@54.0.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2)(typescript-eslint@7.13.0(eslint@9.5.0)(typescript@5.4.5))(typescript@5.4.5)
+        specifier: ^17.0.6
+        version: 17.0.6(@eslint/js@9.5.0)(@tanstack/eslint-plugin-query@5.43.1(eslint@9.5.0)(typescript@5.4.5))(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint-plugin-astro@1.2.2(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-jsx-a11y@6.8.0(eslint@9.5.0))(eslint-plugin-n@17.9.0(eslint@9.5.0))(eslint-plugin-perfectionist@2.11.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2))(eslint-plugin-react-hooks@4.6.2(eslint@9.5.0))(eslint-plugin-react@7.34.2(eslint@9.5.0))(eslint-plugin-sonarjs@1.0.3(eslint@9.5.0))(eslint-plugin-unicorn@54.0.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2)(typescript-eslint@7.13.0(eslint@9.5.0)(typescript@5.4.5))(typescript@5.4.5)
       '@portabletext/types':
         specifier: ^2.0.13
         version: 2.0.13
@@ -535,8 +535,8 @@ packages:
     resolution: {integrity: sha512-BsWiH1yFGjXXS2yvrf5LyuoSIIbPrGUWob917o+BTKuZ7qJdxX8aJLRxs1fS9n6r7vESrq1OUqb68dANcFXuQQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@ethang/eslint-config@17.0.4':
-    resolution: {integrity: sha512-Q/dlO1rBnRrevsuuSZfQx2xxI1MSVKrlTx2/4iqn2Ap8qRoJzhA70/Y7Z7yjKBkhxXW5lau5kAsfhFfHadtlVg==}
+  '@ethang/eslint-config@17.0.6':
+    resolution: {integrity: sha512-nM+tg3stpWfZG7OS048SoGr89/WgO99XOkKBzen7ZuIB4Y8Z8lh7rok8ZCF2CaEGf0XU7aazC+x16oelIyhupw==}
     peerDependencies:
       '@eslint/js': ^9.5.0
       '@tanstack/eslint-plugin-query': ^5.43.1
@@ -4865,7 +4865,7 @@ snapshots:
 
   '@eslint/object-schema@2.1.4': {}
 
-  '@ethang/eslint-config@17.0.4(@eslint/js@9.5.0)(@tanstack/eslint-plugin-query@5.43.1(eslint@9.5.0)(typescript@5.4.5))(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint-plugin-astro@1.2.2(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-jsx-a11y@6.8.0(eslint@9.5.0))(eslint-plugin-n@17.9.0(eslint@9.5.0))(eslint-plugin-perfectionist@2.11.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2))(eslint-plugin-react-hooks@4.6.2(eslint@9.5.0))(eslint-plugin-react@7.34.2(eslint@9.5.0))(eslint-plugin-sonarjs@1.0.3(eslint@9.5.0))(eslint-plugin-unicorn@54.0.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2)(typescript-eslint@7.13.0(eslint@9.5.0)(typescript@5.4.5))(typescript@5.4.5)':
+  '@ethang/eslint-config@17.0.6(@eslint/js@9.5.0)(@tanstack/eslint-plugin-query@5.43.1(eslint@9.5.0)(typescript@5.4.5))(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint-plugin-astro@1.2.2(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-jsx-a11y@6.8.0(eslint@9.5.0))(eslint-plugin-n@17.9.0(eslint@9.5.0))(eslint-plugin-perfectionist@2.11.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@9.5.0)(typescript@5.4.5))(eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2))(eslint-plugin-react-hooks@4.6.2(eslint@9.5.0))(eslint-plugin-react@7.34.2(eslint@9.5.0))(eslint-plugin-sonarjs@1.0.3(eslint@9.5.0))(eslint-plugin-unicorn@54.0.0(eslint@9.5.0))(eslint@9.5.0)(prettier@3.3.2)(typescript-eslint@7.13.0(eslint@9.5.0)(typescript@5.4.5))(typescript@5.4.5)':
     dependencies:
       '@eslint/js': 9.5.0
       '@tanstack/eslint-plugin-query': 5.43.1(eslint@9.5.0)(typescript@5.4.5)

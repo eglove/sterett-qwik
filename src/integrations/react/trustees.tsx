@@ -51,7 +51,6 @@ export function RTrustees({
                   size: "lg",
                   src: imageUrl,
                 }}
-                className="gap-4"
                 description={
                   <>
                     <p>
@@ -67,6 +66,7 @@ export function RTrustees({
                     </p>
                   </>
                 }
+                className="gap-4"
                 name={trustee.name}
               />
             </div>
