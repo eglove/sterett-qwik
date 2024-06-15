@@ -1,9 +1,9 @@
-import lodash from 'lodash';
-import { DateTime } from 'luxon';
-import { z } from 'zod';
+import lodash from "lodash";
+import { DateTime } from "luxon";
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
-import { typedObjectSchema } from './schema';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
+import { typedObjectSchema } from "./schema";
 
 export const calendarEventSchema = z.object({
   _id: z.string(),
@@ -32,9 +32,9 @@ export type NewsAndEvents = (
 
 export const getNewsAndEvents = async (): Promise<NewsAndEvents> => {
   const today = DateTime.fromJSDate(new Date(), {
-    zone: 'America/Chicago',
+    zone: "America/Chicago",
   }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
-  const formattedDate = today.toFormat('yyyy-LL-dd');
+  const formattedDate = today.toFormat("yyyy-LL-dd");
 
   const eventQuery = `
     *[_type == "calendarEvent" 
@@ -79,8 +79,8 @@ export const sortNewsAndEvents = (
   }
 
   return merged.flat().sort((a, b) => {
-    const aDate = 'startsAt' in a ? new Date(a.startsAt) : new Date(a.date);
-    const bDate = 'startsAt' in b ? new Date(b.startsAt) : new Date(b.date);
+    const aDate = "startsAt" in a ? new Date(a.startsAt) : new Date(a.date);
+    const bDate = "startsAt" in b ? new Date(b.startsAt) : new Date(b.date);
 
     return aDate.getTime() - bDate.getTime();
   });

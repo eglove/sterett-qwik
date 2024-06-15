@@ -1,10 +1,10 @@
 /** @jsxImportSource react **/
-import type { JSX } from 'react';
-import { SanityImage as SImage } from 'sanity-image';
-import type { z } from 'zod';
+import type { JSX } from "react";
+import { SanityImage as SImage } from "sanity-image";
+import type { z } from "zod";
 
-import type { imageAssetSchema } from '../../sanity/queries/schema';
-import { imageBuilder } from '../../sanity/sterett-sanity-client';
+import type { imageAssetSchema } from "../../sanity/queries/schema";
+import { imageBuilder } from "../../sanity/sterett-sanity-client";
 
 type SanityPortableImageProperties = {
   readonly altText: string;
@@ -19,7 +19,7 @@ export function SanityPortableImage({
   const imageUrl = imageBuilder
     .image(image.url)
     .maxWidth(IMAGE_SIZE)
-    .format('webp')
+    .format("webp")
     .url();
 
   return (

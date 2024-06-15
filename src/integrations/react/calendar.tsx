@@ -1,8 +1,8 @@
 /** @jsxImportSource react */
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
-import { qwikify$ } from '@builder.io/qwik-react';
-import { Button } from '@nextui-org/button';
+import { qwikify$ } from "@builder.io/qwik-react";
+import { Button } from "@nextui-org/button";
 import {
   Modal,
   ModalBody,
@@ -10,18 +10,18 @@ import {
   ModalFooter,
   ModalHeader,
   useDisclosure,
-} from '@nextui-org/modal';
-import type { TypedObject } from '@portabletext/types';
-import { DateTime } from 'luxon';
-import moment from 'moment';
-import type { JSX } from 'react';
-import { useCallback, useState } from 'react';
-import type { View, ViewsProps } from 'react-big-calendar';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import { z } from 'zod';
+} from "@nextui-org/modal";
+import type { TypedObject } from "@portabletext/types";
+import { DateTime } from "luxon";
+import moment from "moment";
+import type { JSX } from "react";
+import { useCallback, useState } from "react";
+import type { View, ViewsProps } from "react-big-calendar";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import { z } from "zod";
 
-import { typedObjectSchema } from '../../sanity/queries/schema';
-import { RSanityContent } from './sanity-content';
+import { typedObjectSchema } from "../../sanity/queries/schema";
+import { RSanityContent } from "./sanity-content";
 
 export type TCalendarComponentEventSchema = z.infer<
   typeof calendarComponentEventsSchema
@@ -34,7 +34,7 @@ export const calendarComponentEventsSchema = z.object({
   title: z.string(),
 });
 
-const calendarViews: ViewsProps = ['month', 'week', 'day', 'agenda'];
+const calendarViews: ViewsProps = ["month", "week", "day", "agenda"];
 
 const localizer = momentLocalizer(moment);
 
@@ -43,7 +43,7 @@ type CalendarViewProperties = {
 };
 
 export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
-  const [clientView, setClientView] = useState<View>('week');
+  const [clientView, setClientView] = useState<View>("week");
 
   const [selectedEvent, setSelectedEvent] =
     useState<TCalendarComponentEventSchema>();
@@ -81,22 +81,24 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
                   <ModalHeader>{selectedEvent.title}</ModalHeader>
                   <ModalBody>
                     <div>
+                      {}
                       <p className="leading-relaxed">
-                        Starts:{' '}
+                        Starts:{" "}
                         {DateTime.fromJSDate(selectedEvent.start, {
-                          zone: 'America/Chicago',
+                          zone: "America/Chicago",
                         }).toLocaleString({
-                          dateStyle: 'medium',
-                          timeStyle: 'short',
+                          dateStyle: "medium",
+                          timeStyle: "short",
                         })}
                       </p>
+                      {}
                       <p className="leading-relaxed">
-                        Ends:{' '}
+                        Ends:{" "}
                         {DateTime.fromJSDate(selectedEvent.end, {
-                          zone: 'America/Chicago',
+                          zone: "America/Chicago",
                         }).toLocaleString({
-                          dateStyle: 'medium',
-                          timeStyle: 'short',
+                          dateStyle: "medium",
+                          timeStyle: "short",
                         })}
                       </p>
                     </div>
@@ -122,5 +124,5 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
 }
 
 export const CalendarView = qwikify$(RCalendar, {
-  eagerness: 'load',
+  eagerness: "load",
 });

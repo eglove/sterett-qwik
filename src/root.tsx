@@ -1,13 +1,13 @@
-import './global.css';
+import "./global.css";
 
-import { component$ } from '@builder.io/qwik';
+import { component$ } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
-} from '@builder.io/qwik-city';
+} from "@builder.io/qwik-city";
 
-import { RouterHead } from './components/router-head/router-head';
+import { RouterHead } from "./components/router-head/router-head";
 
 export default component$(() => {
   return (
@@ -41,7 +41,7 @@ export default component$(() => {
         <ServiceWorkerRegister />
       </head>
       <body
-        class="min-h-screen bg-gradient-to-b from-sky-600 to-sky-50 pt-4"
+        className="min-h-screen bg-gradient-to-b from-sky-600 to-sky-50 pt-4"
         lang="en"
       >
         <RouterOutlet />

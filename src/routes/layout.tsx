@@ -1,9 +1,9 @@
-import { component$, Slot } from '@builder.io/qwik';
-import type { RequestHandler } from '@builder.io/qwik-city';
-import { routeLoader$ } from '@builder.io/qwik-city';
+import { component$, Slot } from "@builder.io/qwik";
+import type { RequestHandler } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
-import { Navigation } from '../integrations/react/navigation';
-import { getGalleryImagesAmount } from '../sanity/queries/get-gallery-images-amount';
+import { Navigation } from "../integrations/react/navigation";
+import { getGalleryImagesAmount } from "../sanity/queries/get-gallery-images-amount";
 
 export const onGet: RequestHandler = ({ cacheControl }) => {
   cacheControl({
@@ -19,7 +19,7 @@ export const useImagesAmount = routeLoader$(async () => {
 export const usePathname = routeLoader$(({ pathname }) => {
   const FIRST = 0;
   const LAST = -1;
-  if (pathname.at(LAST) === '/' && pathname !== '/') {
+  if ("/" === pathname.at(LAST) && "/" !== pathname) {
     return pathname.slice(FIRST, LAST);
   }
 

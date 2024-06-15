@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
 
 export type FileSchema = z.infer<typeof fileSchema>;
 export type GetFilesSchema = z.infer<typeof getFilesSchema>;

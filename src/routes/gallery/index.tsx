@@ -1,20 +1,20 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { routeLoader$ } from '@builder.io/qwik-city';
-import { qwikify$ } from '@builder.io/qwik-react';
-import { Image } from '@nextui-org/image';
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
+import { qwikify$ } from "@builder.io/qwik-react";
+import { Image } from "@nextui-org/image";
 
-import { Container } from '../../components/container';
-import { getGalleryImages } from '../../sanity/queries/get-gallery-images';
+import { Container } from "../../components/container";
+import { getGalleryImages } from "../../sanity/queries/get-gallery-images";
 
 export const head: DocumentHead = {
   meta: [
     {
-      content: 'Pictures from Sterett Creek Village Trustee',
-      name: 'description',
+      content: "Pictures from Sterett Creek Village Trustee",
+      name: "description",
     },
   ],
-  title: 'Sterett Creek Village Trustee | Gallery',
+  title: "Sterett Creek Village Trustee | Gallery",
 };
 
 export const useImages = routeLoader$(async () => {
@@ -28,8 +28,8 @@ export default component$(() => {
 
   return (
     <Container>
-      <div class="flex flex-wrap gap-4">
-        {data.value.map(image => {
+      <div className="flex flex-wrap gap-4">
+        {data.value.map((image) => {
           return (
             <QImage
               key={image.image.asset.url}

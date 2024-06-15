@@ -10,15 +10,14 @@
  * - npm run build
  *
  */
-import type { RenderToStreamResult } from '@builder.io/qwik/server';
+import type { RenderToStreamResult } from "@builder.io/qwik/server";
 import {
   renderToStream,
   type RenderToStreamOptions,
-} from '@builder.io/qwik/server';
-// eslint-disable-next-line import/no-unresolved
-import { manifest } from '@qwik-client-manifest';
+} from "@builder.io/qwik/server";
+import { manifest } from "@qwik-client-manifest";
 
-import Root from './root';
+import Root from "./root";
 
 export default async function entry(
   options: RenderToStreamOptions,
@@ -28,7 +27,7 @@ export default async function entry(
     ...options,
     // Use container attributes to set attributes on the html tag.
     containerAttributes: {
-      lang: 'en-us',
+      lang: "en-us",
       ...options.containerAttributes,
     },
   });

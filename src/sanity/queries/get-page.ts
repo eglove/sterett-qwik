@@ -1,7 +1,7 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-import { sterettSanityClient } from '../sterett-sanity-client';
-import { imageAssetSchema, typedObjectSchema } from './schema';
+import { sterettSanityClient } from "../sterett-sanity-client";
+import { imageAssetSchema, typedObjectSchema } from "./schema";
 
 export const getPageSchema = z.object({
   _id: z.string(),

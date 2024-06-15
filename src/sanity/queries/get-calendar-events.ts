@@ -1,7 +1,7 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
-import { typedObjectSchema } from './schema';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
+import { typedObjectSchema } from "./schema";
 
 export const getCalendarEventsSchema = z.array(
   z.object({

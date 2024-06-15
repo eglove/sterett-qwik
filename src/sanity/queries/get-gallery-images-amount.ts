@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
 
 export const imageAssetSchema = z.object({
   metadata: z.object({

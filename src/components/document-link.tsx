@@ -1,8 +1,8 @@
-import { component$ } from '@builder.io/qwik';
-import { qwikify$ } from '@builder.io/qwik-react';
-import { Link as NextUILink } from '@nextui-org/react';
+import { component$ } from "@builder.io/qwik";
+import { qwikify$ } from "@builder.io/qwik-react";
+import { Link as NextUILink } from "@nextui-org/react";
 
-import type { FileSchema } from '../sanity/queries/get-files';
+import type { FileSchema } from "../sanity/queries/get-files";
 
 const QLink = qwikify$(NextUILink);
 

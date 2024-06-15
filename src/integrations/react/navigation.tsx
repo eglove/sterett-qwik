@@ -1,5 +1,5 @@
 /** @jsxImportSource react */
-import { qwikify$ } from '@builder.io/qwik-react';
+import { qwikify$ } from "@builder.io/qwik-react";
 import {
   Navbar,
   NavbarBrand,
@@ -7,35 +7,35 @@ import {
   NavbarItem,
   NavbarMenu,
   NavbarMenuToggle,
-} from '@nextui-org/navbar';
-import { Link } from '@nextui-org/react';
-import type { JSX } from 'react';
-import { useCallback, useState } from 'react';
+} from "@nextui-org/navbar";
+import { Link } from "@nextui-org/react";
+import type { JSX } from "react";
+import { useCallback, useState } from "react";
 
 const navUrls = [
   {
-    name: 'Home',
-    url: '/',
+    name: "Home",
+    url: "/",
   },
   {
-    name: 'News',
-    url: '/news',
+    name: "News",
+    url: "/news",
   },
   {
-    name: 'Calendar',
-    url: '/calendar',
+    name: "Calendar",
+    url: "/calendar",
   },
   {
-    name: 'Files',
-    url: '/files',
+    name: "Files",
+    url: "/files",
   },
   {
-    name: 'Trustees',
-    url: '/trustees',
+    name: "Trustees",
+    url: "/trustees",
   },
   {
-    name: 'Beyonder',
-    url: '/beyonder',
+    name: "Beyonder",
+    url: "/beyonder",
   },
 ];
 
@@ -44,7 +44,6 @@ type NavigationProperties = {
   readonly pathName: string;
 };
 
-// eslint-disable-next-line max-lines-per-function
 function RNavigation({
   pathName,
   imagesAmount,
@@ -65,18 +64,18 @@ function RNavigation({
     >
       <NavbarContent className="pl-0">
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="text-foreground md:hidden"
         />
         <NavbarBrand>
-          {/* eslint-disable-next-line react/jsx-max-depth */}
+          {}
           <h1 className="m-2 border-b-2 border-sky-700 text-sm font-bold text-sky-700 sm:text-2xl">
             Sterett Creek Village Trustee
           </h1>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden gap-4 md:flex md:flex-wrap">
-        {navUrls.map(item => {
+        {navUrls.map((item) => {
           return (
             <NavbarItem
               key={item.name}
@@ -91,14 +90,14 @@ function RNavigation({
           <NavbarItem
             key="gallery"
             className="text-sky-700"
-            isActive={pathName === '/gallery'}
+            isActive={"/gallery" === pathName}
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
         )}
       </NavbarContent>
       <NavbarMenu className="mt-4 rounded-lg">
-        {navUrls.map(item => {
+        {navUrls.map((item) => {
           return (
             <NavbarItem
               key={item.name}
@@ -113,7 +112,7 @@ function RNavigation({
           <NavbarItem
             key="gallery"
             className="text-sky-700"
-            isActive={pathName === '/gallery'}
+            isActive={"/gallery" === pathName}
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -123,4 +122,4 @@ function RNavigation({
   );
 }
 
-export const Navigation = qwikify$(RNavigation, { eagerness: 'load' });
+export const Navigation = qwikify$(RNavigation, { eagerness: "load" });

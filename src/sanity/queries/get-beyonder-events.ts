@@ -1,8 +1,8 @@
-import { DateTime } from 'luxon';
-import { z } from 'zod';
+import { DateTime } from "luxon";
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
-import { typedObjectSchema } from './schema';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
+import { typedObjectSchema } from "./schema";
 
 export const beyonderEventSchema = z.object({
   _id: z.string(),
@@ -14,9 +14,9 @@ export const beyonderEventSchema = z.object({
 
 export const getBeyonderEvents = async () => {
   const today = DateTime.fromJSDate(new Date(), {
-    zone: 'America/Chicago',
+    zone: "America/Chicago",
   }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
-  const formattedDate = today.toFormat('yyyy-LL-dd');
+  const formattedDate = today.toFormat("yyyy-LL-dd");
 
   const eventQuery = `
     *[_type == "beyonderEvent" 

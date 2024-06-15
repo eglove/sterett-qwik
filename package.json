@@ -7,19 +7,6 @@
     "sharp"
   ],
   "type": "module",
-  "eslintConfig": {
-    "extends": [
-      "ethang",
-      "plugin:qwik/recommended"
-    ],
-    "rules": {
-      "max-lines-per-function": "off",
-      "react/jsx-max-depth": "off",
-      "react/no-unknown-property": "off",
-      "qwik/no-react-props": "off",
-      "react/jsx-no-literals": "off"
-    }
-  },
   "scripts": {
     "build": "qwik build",
     "build.client": "vite build",
@@ -39,6 +26,7 @@
     "@builder.io/qwik": "^1.5.7",
     "@builder.io/qwik-city": "^1.5.7",
     "@builder.io/qwik-react": "0.5.4",
+    "@ethang/eslint-config": "^16.3.2",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.13",
     "@types/eslint": "^8.56.10",
@@ -51,8 +39,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.0",
     "@typescript-eslint/parser": "^7.13.0",
     "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-config-ethang": "^14.1.9",
+    "eslint": "^9.5.0",
     "eslint-plugin-qwik": "^1.5.7",
     "postcss": "^8.4.38",
     "prettier-plugin-tailwindcss": "^0.6.4",
@@ -60,6 +47,7 @@
     "react-dom": "18.3.1",
     "tailwindcss": "3.4.4",
     "typescript": "^5.4.5",
+    "typescript-eslint": "^7.13.0",
     "undici": "^6.19.0",
     "vite": "^5.3.1",
     "vite-tsconfig-paths": "^4.3.2",

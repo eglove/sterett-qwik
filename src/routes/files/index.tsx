@@ -1,19 +1,19 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { routeLoader$ } from '@builder.io/qwik-city';
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { routeLoader$ } from "@builder.io/qwik-city";
 
-import { Container } from '../../components/container';
-import { DocumentLink } from '../../components/document-link';
-import { getFiles } from '../../sanity/queries/get-files';
+import { Container } from "../../components/container";
+import { DocumentLink } from "../../components/document-link";
+import { getFiles } from "../../sanity/queries/get-files";
 
 export const head: DocumentHead = {
   meta: [
     {
-      content: 'Covenants and files for Sterett Creek Village Trustee',
-      name: 'description',
+      content: "Covenants and files for Sterett Creek Village Trustee",
+      name: "description",
     },
   ],
-  title: 'Sterett Creek Village Trustee | Files',
+  title: "Sterett Creek Village Trustee | Files",
 };
 
 export const useFiles = routeLoader$(async () => {
@@ -25,23 +25,23 @@ export default component$(() => {
 
   return (
     <Container>
-      <div class="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-2">
         <div>
           <div>
-            {/* eslint-disable-next-line react/jsx-max-depth */}
-            <h2 class="text-2xl font-bold">Files</h2>
-            {data.value.covenants.map(covenant => {
+            {}
+            <h2 className="text-2xl font-bold">Files</h2>
+            {data.value.covenants.map((covenant) => {
               return <DocumentLink key={covenant._id} document={covenant} />;
             })}
-            {data.value.general.map(file => {
+            {data.value.general.map((file) => {
               return <DocumentLink key={file._id} document={file} />;
             })}
           </div>
         </div>
         <div>
-          {/* eslint-disable-next-line react/jsx-max-depth */}
-          <h2 class="text-2xl font-bold">Meeting Minutes</h2>
-          {data.value.meetingMinutes.map(meetingMinute => {
+          {}
+          <h2 className="text-2xl font-bold">Meeting Minutes</h2>
+          {data.value.meetingMinutes.map((meetingMinute) => {
             return (
               <DocumentLink key={meetingMinute._id} document={meetingMinute} />
             );

@@ -1,26 +1,25 @@
 /** @jsxImportSource react **/
-import { qwikify$ } from '@builder.io/qwik-react';
-import { Link } from '@nextui-org/link';
-import { User } from '@nextui-org/user';
-import type { JSX } from 'react';
+import { qwikify$ } from "@builder.io/qwik-react";
+import { Link } from "@nextui-org/link";
+import { User } from "@nextui-org/user";
+import type { JSX } from "react";
 
-import { containerClass } from '../../components/container';
-import type { getTrustees } from '../../sanity/queries/get-trustees';
-import { imageBuilder } from '../../sanity/sterett-sanity-client';
+import { containerClass } from "../../components/container";
+import type { getTrustees } from "../../sanity/queries/get-trustees";
+import { imageBuilder } from "../../sanity/sterett-sanity-client";
 
 export type AvatarColor =
-  | 'danger'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning';
+  | "danger"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "warning";
 
 type TrusteesProperties = {
   readonly colorValues: AvatarColor[];
   readonly trustees: Awaited<ReturnType<typeof getTrustees>>;
 };
 
-// eslint-disable-next-line max-lines-per-function
 export function RTrustees({
   trustees,
   colorValues,
@@ -34,7 +33,7 @@ export function RTrustees({
             .image(trustee.image.asset.url)
             .height(IMAGE_SIZE)
             .width(IMAGE_SIZE)
-            .format('webp')
+            .format("webp")
             .url();
 
           return (
@@ -44,10 +43,10 @@ export function RTrustees({
             >
               <User
                 avatarProps={{
-                  className: 'w-32 h-32',
-                  color: colorValues[index] ?? 'default',
+                  className: "w-32 h-32",
+                  color: colorValues[index] ?? "default",
                   isBordered: true,
-                  size: 'lg',
+                  size: "lg",
                   src: imageUrl,
                 }}
                 className="gap-4"
@@ -76,4 +75,4 @@ export function RTrustees({
   );
 }
 
-export const Trustees = qwikify$(RTrustees, { eagerness: 'load' });
+export const Trustees = qwikify$(RTrustees, { eagerness: "load" });

@@ -1,28 +1,27 @@
 /** @jsxImportSource react */
-import { qwikify$ } from '@builder.io/qwik-react';
-import { CalendarDaysIcon } from '@heroicons/react/24/solid';
-import { Card, CardBody, CardHeader } from '@nextui-org/card';
-import { Divider } from '@nextui-org/divider';
-import type { TypedObject } from '@portabletext/types';
-import lodash from 'lodash';
-import { DateTime } from 'luxon';
-import type { ReactNode } from 'react';
-import { Fragment } from 'react';
-import { twMerge } from 'tailwind-merge';
-import type { z } from 'zod';
+import { qwikify$ } from "@builder.io/qwik-react";
+import { CalendarDaysIcon } from "@heroicons/react/24/solid";
+import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Divider } from "@nextui-org/divider";
+import type { TypedObject } from "@portabletext/types";
+import lodash from "lodash";
+import { DateTime } from "luxon";
+import type { ReactNode } from "react";
+import { Fragment } from "react";
+import { twMerge } from "tailwind-merge";
+import type { z } from "zod";
 
-import type { calendarEventSchema } from '../../sanity/queries/get-news-and-events';
-import { getRelativeDate, now } from '../../util/date';
-import { RSanityContent } from './sanity-content';
+import type { calendarEventSchema } from "../../sanity/queries/get-news-and-events";
+import { getRelativeDate, now } from "../../util/date";
+import { RSanityContent } from "./sanity-content";
 
 type EventProperties = {
-  // eslint-disable-next-line react/require-default-props
   readonly colors?: {
     eventBackground?: string;
     eventText?: string;
   };
   readonly data: z.output<typeof calendarEventSchema>;
-  // eslint-disable-next-line react/require-default-props
+
   readonly iconMeta?: {
     alt: string;
     src: string;
@@ -31,13 +30,13 @@ type EventProperties = {
 };
 
 const eventDateFormat = (date: string): string => {
-  return DateTime.fromISO(date, { zone: 'America/Chicago' }).toLocaleString({
-    dateStyle: 'medium',
-    timeStyle: 'short',
+  return DateTime.fromISO(date, { zone: "America/Chicago" }).toLocaleString({
+    dateStyle: "medium",
+    timeStyle: "short",
   });
 };
 
-const happeningNow = 'Happening Now!';
+const happeningNow = "Happening Now!";
 
 // eslint-disable-next-line max-statements
 export function REvent({
@@ -63,17 +62,17 @@ export function REvent({
   }
 
   const backgroundColor = lodash.isNil(colors?.eventBackground)
-    ? 'bg-sky-200'
+    ? "bg-sky-200"
     : `bg-${colors.eventBackground}`;
   const textColor = lodash.isNil(colors?.eventText)
-    ? 'text-foreground'
+    ? "text-foreground"
     : colors.eventText;
 
   return (
     <Fragment key={data._id}>
       {isDateShowing ? (
         <Card
-          className={twMerge('text-lg font-bold', backgroundColor, textColor)}
+          className={twMerge("text-lg font-bold", backgroundColor, textColor)}
         >
           <CardBody>
             {isInRange ? happeningNow : getRelativeDate(data.startsAt)}
@@ -81,10 +80,10 @@ export function REvent({
         </Card>
       ) : null}
       <Card
-        className={twMerge('my-4 h-max w-full', backgroundColor)}
+        className={twMerge("my-4 h-max w-full", backgroundColor)}
         id={data._id}
       >
-        <CardHeader className={twMerge('block', textColor)}>
+        <CardHeader className={twMerge("block", textColor)}>
           <strong className="flex flex-wrap gap-2">
             {lodash.isNil(iconMeta) ? (
               <CalendarDaysIcon height={24} width={24} />
@@ -96,14 +95,18 @@ export function REvent({
                 src={iconMeta.src}
               />
             )}
+            {}
             <span>{eventDateFormat(data.startsAt)}</span>
+            {}
             <span>
               {data.endsAt === data.startsAt
-                ? ''
+                ? ""
                 : ` - ${eventDateFormat(data.endsAt)}`}
             </span>
           </strong>
+          {}
           <br />
+          {}
           <div className="font-semibold">{data.title}</div>
         </CardHeader>
         {!lodash.isNil(data.description) && (
@@ -111,7 +114,7 @@ export function REvent({
             <Divider />
             <CardBody>
               <RSanityContent
-                className={textColor}
+                styleNames={textColor}
                 value={data.description as TypedObject}
               />
             </CardBody>

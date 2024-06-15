@@ -1,23 +1,23 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { Link, routeLoader$ } from '@builder.io/qwik-city';
+import { component$ } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import { Link, routeLoader$ } from "@builder.io/qwik-city";
 
-import { Container } from '../../components/container';
-import { Event } from '../../integrations/react/event';
-import { EmailOutlineIcon } from '../../integrations/react/icons/email-outline-icon';
-import { LinkOutlineIcon } from '../../integrations/react/icons/link-outline-icon';
-import { MapPinOutlineIcon } from '../../integrations/react/icons/map-outline-icon';
-import { PhoneOutlineIcon } from '../../integrations/react/icons/phone-outline-icon';
-import { getBeyonderEvents } from '../../sanity/queries/get-beyonder-events';
+import { Container } from "../../components/container";
+import { Event } from "../../integrations/react/event";
+import { EmailOutlineIcon } from "../../integrations/react/icons/email-outline-icon";
+import { LinkOutlineIcon } from "../../integrations/react/icons/link-outline-icon";
+import { MapPinOutlineIcon } from "../../integrations/react/icons/map-outline-icon";
+import { PhoneOutlineIcon } from "../../integrations/react/icons/phone-outline-icon";
+import { getBeyonderEvents } from "../../sanity/queries/get-beyonder-events";
 
 export const head: DocumentHead = {
   meta: [
     {
-      content: 'Event Updates for Beyonder Camp',
-      name: 'description',
+      content: "Event Updates for Beyonder Camp",
+      name: "description",
     },
   ],
-  title: 'Beyonder Camp Events',
+  title: "Beyonder Camp Events",
 };
 
 export const useBeyonderEvents = routeLoader$(async () => {
@@ -29,7 +29,7 @@ export default component$(() => {
   const usedDates = new Set();
 
   return (
-    <Container className="p-0">
+    <Container styleNames="p-0">
       <div class="mx-4 mt-4 grid place-items-center">
         <img
           alt="Beyonder Camp"
@@ -39,7 +39,7 @@ export default component$(() => {
         />
         <h2 class="text-lg font-bold sm:text-xl">Beyonder</h2>
         <h3 class="text-2xl font-bold sm:text-3xl">
-          {'Christopher Hawn'.toUpperCase()}
+          {"Christopher Hawn".toUpperCase()}
         </h3>
         <h4 class="text-xl sm:text-2xl">General Manager</h4>
         <h4 class="text-lg sm:text-xl">BEYONDER Marine at Sterett Creek</h4>
@@ -78,17 +78,17 @@ export default component$(() => {
         </div>
       </div>
       <div class="grid w-full gap-4 p-2">
-        {data.value.map(datum => {
+        {data.value.map((datum) => {
           return (
             <Event
               key={datum._id}
               colors={{
-                eventBackground: 'beyonderGreen',
-                eventText: 'text-white',
+                eventBackground: "beyonderGreen",
+                eventText: "text-white",
               }}
               data={datum}
               usedDates={usedDates}
-              iconMeta={{ alt: 'Beyonder Camp', src: '/images/beyonder.png' }}
+              iconMeta={{ alt: "Beyonder Camp", src: "/images/beyonder.png" }}
             />
           );
         })}

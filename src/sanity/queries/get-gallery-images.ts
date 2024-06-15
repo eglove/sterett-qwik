@@ -1,8 +1,8 @@
-import lodash from 'lodash';
-import { z } from 'zod';
+import lodash from "lodash";
+import { z } from "zod";
 
-import { NO_DRAFTS, sterettSanityClient } from '../sterett-sanity-client';
-import { imageAssetSchema } from './schema';
+import { NO_DRAFTS, sterettSanityClient } from "../sterett-sanity-client";
+import { imageAssetSchema } from "./schema";
 
 export const getGalleryImagesSchema = z.array(
   z.object({
