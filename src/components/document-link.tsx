@@ -11,10 +11,10 @@ export const DocumentLink = component$(
     return (
       <div class="flex flex-wrap items-center gap-1 py-2">
         <QLink
-          isExternal
-          showAnchorIcon
           className="text-black underline"
           href={document.file.asset.url}
+          isExternal
+          showAnchorIcon
         >
           {document.title}
         </QLink>

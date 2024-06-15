@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { Link, routeLoader$ } from "@builder.io/qwik-city";
 
 import { Container } from "../../components/container";
@@ -33,9 +34,9 @@ export default component$(() => {
       <div class="mx-4 mt-4 grid place-items-center">
         <img
           alt="Beyonder Camp"
-          width={32}
           height={32}
           src="/images/beyonder.png"
+          width={32}
         />
         <h2 class="text-lg font-bold sm:text-xl">Beyonder</h2>
         <h3 class="text-2xl font-bold sm:text-3xl">
@@ -46,23 +47,23 @@ export default component$(() => {
       </div>
       <div class="mx-4 flex flex-col flex-wrap gap-4 sm:flex-row">
         <div class="flex items-center gap-2">
-          <LinkOutlineIcon width={20} height={20} />
+          <LinkOutlineIcon height={20} width={20} />
           <Link
-            target="_blank"
             class="underline"
             href="https://beyondercamp.com/sterett-creek-warsaw-mo/"
+            target="_blank"
           >
             BeyonderCamp.com
           </Link>
         </div>
         <div class="flex items-center gap-2">
-          <EmailOutlineIcon width={20} height={20} />
+          <EmailOutlineIcon height={20} width={20} />
           <Link class="underline" href="mailto:chris@beyondercamp.com">
             chris@beyondercamp.com
           </Link>
         </div>
         <div class="flex items-center gap-2">
-          <PhoneOutlineIcon width={20} height={20} />
+          <PhoneOutlineIcon height={20} width={20} />
           <Link class="underline" href="tel:8804382280">
             880.438.2280
           </Link>
@@ -70,7 +71,7 @@ export default component$(() => {
       </div>
       <div>
         <div class="flex items-center gap-2">
-          <MapPinOutlineIcon width={32} height={32} />
+          <MapPinOutlineIcon height={32} width={32} />
           <div>
             <div>18174 Marina Rd.</div>
             <div>Warsaw, MO 65355</div>
@@ -81,14 +82,14 @@ export default component$(() => {
         {data.value.map((datum) => {
           return (
             <Event
-              key={datum._id}
               colors={{
                 eventBackground: "beyonderGreen",
                 eventText: "text-white",
               }}
               data={datum}
-              usedDates={usedDates}
               iconMeta={{ alt: "Beyonder Camp", src: "/images/beyonder.png" }}
+              key={datum._id}
+              usedDates={usedDates}
             />
           );
         })}

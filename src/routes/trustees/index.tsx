@@ -1,10 +1,12 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import lodash from "lodash";
 
-import { Container } from "../../components/container";
 import type { AvatarColor } from "../../integrations/react/trustees";
+
+import { Container } from "../../components/container";
 import { Trustees } from "../../integrations/react/trustees";
 import { getTrustees } from "../../sanity/queries/get-trustees";
 

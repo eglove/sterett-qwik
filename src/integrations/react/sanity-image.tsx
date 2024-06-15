@@ -1,9 +1,11 @@
 /** @jsxImportSource react **/
 import type { JSX } from "react";
-import { SanityImage as SImage } from "sanity-image";
 import type { z } from "zod";
 
+import { SanityImage as SImage } from "sanity-image";
+
 import type { imageAssetSchema } from "../../sanity/queries/schema";
+
 import { imageBuilder } from "../../sanity/sterett-sanity-client";
 
 type SanityPortableImageProperties = {

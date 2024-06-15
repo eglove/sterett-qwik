@@ -1,11 +1,13 @@
 /** @jsxImportSource react **/
+import type { JSX } from "react";
+
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Link } from "@nextui-org/link";
 import { User } from "@nextui-org/user";
-import type { JSX } from "react";
+
+import type { getTrustees } from "../../sanity/queries/get-trustees";
 
 import { containerClass } from "../../components/container";
-import type { getTrustees } from "../../sanity/queries/get-trustees";
 import { imageBuilder } from "../../sanity/sterett-sanity-client";
 
 export type AvatarColor =
@@ -21,8 +23,8 @@ type TrusteesProperties = {
 };
 
 export function RTrustees({
-  trustees,
   colorValues,
+  trustees,
 }: TrusteesProperties): JSX.Element {
   return (
     <div className={containerClass}>
@@ -38,8 +40,8 @@ export function RTrustees({
 
           return (
             <div
-              key={trustee._id}
               className="mb-4 w-full gap-4 border-b-2 pb-4"
+              key={trustee._id}
             >
               <User
                 avatarProps={{

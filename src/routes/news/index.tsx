@@ -1,16 +1,18 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { routeLoader$ } from "@builder.io/qwik-city";
-import lodash from "lodash";
 import type { z } from "zod";
 
-import { Container } from "../../components/container";
-import { Event } from "../../integrations/react/event";
-import { NewsUpdate } from "../../integrations/react/news-update";
+import { component$ } from "@builder.io/qwik";
+import { routeLoader$ } from "@builder.io/qwik-city";
+import lodash from "lodash";
+
 import type {
   calendarEventSchema,
   newsUpdateSchema,
 } from "../../sanity/queries/get-news-and-events";
+
+import { Container } from "../../components/container";
+import { Event } from "../../integrations/react/event";
+import { NewsUpdate } from "../../integrations/react/news-update";
 import { getNewsAndEvents } from "../../sanity/queries/get-news-and-events";
 
 export const head: DocumentHead = {
@@ -47,16 +49,16 @@ export default component$(() => {
           if ((datum as z.infer<typeof newsUpdateSchema>).date !== undefined) {
             return (
               <NewsUpdate
-                key={datum._id}
                 data={datum as z.infer<typeof newsUpdateSchema>}
+                key={datum._id}
               />
             );
           }
 
           return (
             <Event
-              key={datum._id}
               data={datum as z.output<typeof calendarEventSchema>}
+              key={datum._id}
               usedDates={usedDates}
             />
           );

@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Image } from "@nextui-org/image";
@@ -32,10 +33,10 @@ export default component$(() => {
         {data.value.map((image) => {
           return (
             <QImage
-              key={image.image.asset.url}
               alt={image.description}
               className="relative h-auto max-w-full rounded-lg"
               height={Number(image.image.asset.metadata.dimensions.height)}
+              key={image.image.asset.url}
               src={image.image.asset.url}
               width={Number(image.image.asset.metadata.dimensions.width)}
             />

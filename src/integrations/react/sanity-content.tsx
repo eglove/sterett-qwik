@@ -1,13 +1,15 @@
 /** @jsxImportSource react **/
-import { qwikify$ } from "@builder.io/qwik-react";
 import type { PortableTextReactComponents } from "@portabletext/react";
-import { PortableText } from "@portabletext/react";
 import type { TypedObject } from "@portabletext/types";
 import type { JSX } from "react";
-import { twMerge } from "tailwind-merge";
 import type { z } from "zod";
 
+import { qwikify$ } from "@builder.io/qwik-react";
+import { PortableText } from "@portabletext/react";
+import { twMerge } from "tailwind-merge";
+
 import type { imageAssetSchema } from "../../sanity/queries/schema";
+
 import { SanityPortableImage } from "./sanity-image";
 
 type SanityContentProperties = {
@@ -35,8 +37,8 @@ const potableTextComponents: Partial<PortableTextReactComponents> = {
 };
 
 export function RSanityContent({
-  value,
   styleNames,
+  value,
 }: SanityContentProperties): JSX.Element {
   return (
     <div className={twMerge("prose", styleNames)}>

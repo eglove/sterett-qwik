@@ -1,4 +1,6 @@
 /** @jsxImportSource react */
+import type { JSX } from "react";
+
 import { qwikify$ } from "@builder.io/qwik-react";
 import {
   Navbar,
@@ -9,7 +11,6 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/navbar";
 import { Link } from "@nextui-org/react";
-import type { JSX } from "react";
 import { useCallback, useState } from "react";
 
 const navUrls = [
@@ -45,8 +46,8 @@ type NavigationProperties = {
 };
 
 function RNavigation({
-  pathName,
   imagesAmount,
+  pathName,
 }: NavigationProperties): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -78,9 +79,9 @@ function RNavigation({
         {navUrls.map((item) => {
           return (
             <NavbarItem
-              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
+              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -88,9 +89,9 @@ function RNavigation({
         })}
         {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
-            key="gallery"
             className="text-sky-700"
             isActive={"/gallery" === pathName}
+            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>
@@ -100,9 +101,9 @@ function RNavigation({
         {navUrls.map((item) => {
           return (
             <NavbarItem
-              key={item.name}
               className="text-sky-700"
               isActive={pathName === item.url}
+              key={item.name}
             >
               <Link href={item.url}>{item.name}</Link>
             </NavbarItem>
@@ -110,9 +111,9 @@ function RNavigation({
         })}
         {imagesAmount >= MIN_IMAGES && (
           <NavbarItem
-            key="gallery"
             className="text-sky-700"
             isActive={"/gallery" === pathName}
+            key="gallery"
           >
             <Link href="/gallery">Pictures</Link>
           </NavbarItem>

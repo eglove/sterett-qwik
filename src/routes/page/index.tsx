@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Link } from "@nextui-org/react";
@@ -30,11 +31,11 @@ export default component$(() => {
     <Container>
       {data.value.map((page) => {
         return (
-          <div key={page._id} className="w-full">
+          <div className="w-full" key={page._id}>
             <QLink
-              key={page._id}
               className="underline"
               href={`/page/${page.slug.current}`}
+              key={page._id}
             >
               {page.title}
             </QLink>

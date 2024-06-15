@@ -11,6 +11,7 @@
  */
 // eslint-disable-next-line unicorn/prevent-abbreviations
 import type { RenderResult } from "@builder.io/qwik";
+
 import { render, type RenderOptions } from "@builder.io/qwik";
 
 import Root from "./root";

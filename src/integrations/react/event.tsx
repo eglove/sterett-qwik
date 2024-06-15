@@ -1,17 +1,19 @@
 /** @jsxImportSource react */
+import type { TypedObject } from "@portabletext/types";
+import type { ReactNode } from "react";
+import type { z } from "zod";
+
 import { qwikify$ } from "@builder.io/qwik-react";
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import { Card, CardBody, CardHeader } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
-import type { TypedObject } from "@portabletext/types";
 import lodash from "lodash";
 import { DateTime } from "luxon";
-import type { ReactNode } from "react";
 import { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
-import type { z } from "zod";
 
 import type { calendarEventSchema } from "../../sanity/queries/get-news-and-events";
+
 import { getRelativeDate, now } from "../../util/date";
 import { RSanityContent } from "./sanity-content";
 
@@ -40,10 +42,10 @@ const happeningNow = "Happening Now!";
 
 // eslint-disable-next-line max-statements
 export function REvent({
-  data,
-  usedDates,
   colors,
+  data,
   iconMeta,
+  usedDates,
 }: EventProperties): ReactNode {
   const isInRange =
     now.getTime() > new Date(data.startsAt).getTime() &&
@@ -90,9 +92,9 @@ export function REvent({
             ) : (
               <img
                 alt={iconMeta.alt}
-                width={20}
                 height={20}
                 src={iconMeta.src}
+                width={20}
               />
             )}
             {}

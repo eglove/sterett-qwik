@@ -1,4 +1,5 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
+
 import { HTTP_STATUS } from "@ethang/toolbelt/constants/http";
 
 export const onGet: RequestHandler = ({ redirect }) => {

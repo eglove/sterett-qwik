@@ -11,7 +11,7 @@ export const getPageSchema = z.object({
 
 export async function getPage(
   slug: string,
-): Promise<z.output<typeof getPageSchema> | undefined> {
+): Promise<undefined | z.output<typeof getPageSchema>> {
   const pageQuery = `*[_type == "page" && slug.current == $slug]{
     _id, 
     title, 

@@ -1,5 +1,7 @@
 /** @jsxImportSource react */
-import "react-big-calendar/lib/css/react-big-calendar.css";
+import type { TypedObject } from "@portabletext/types";
+import type { JSX } from "react";
+import type { View, ViewsProps } from "react-big-calendar";
 
 import { qwikify$ } from "@builder.io/qwik-react";
 import { Button } from "@nextui-org/button";
@@ -11,13 +13,11 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@nextui-org/modal";
-import type { TypedObject } from "@portabletext/types";
 import { DateTime } from "luxon";
 import moment from "moment";
-import type { JSX } from "react";
 import { useCallback, useState } from "react";
-import type { View, ViewsProps } from "react-big-calendar";
 import { Calendar, momentLocalizer } from "react-big-calendar";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import { z } from "zod";
 
 import { typedObjectSchema } from "../../sanity/queries/schema";
@@ -60,17 +60,17 @@ export function RCalendar({ events }: CalendarViewProperties): JSX.Element {
   return (
     <>
       <Calendar
-        selectable
         className="min-h-screen w-full"
         defaultView="week"
         endAccessor="end"
         events={events}
         localizer={localizer}
+        onSelectEvent={handleSelectEvent}
+        onView={setClientView}
+        selectable
         startAccessor="start"
         view={clientView}
         views={calendarViews}
-        onSelectEvent={handleSelectEvent}
-        onView={setClientView}
       />
       {selectedEvent !== undefined && (
         <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>

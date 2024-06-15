@@ -1,5 +1,6 @@
-import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+
+import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 
 import { Container } from "../../components/container";
@@ -31,10 +32,10 @@ export default component$(() => {
             {}
             <h2 className="text-2xl font-bold">Files</h2>
             {data.value.covenants.map((covenant) => {
-              return <DocumentLink key={covenant._id} document={covenant} />;
+              return <DocumentLink document={covenant} key={covenant._id} />;
             })}
             {data.value.general.map((file) => {
-              return <DocumentLink key={file._id} document={file} />;
+              return <DocumentLink document={file} key={file._id} />;
             })}
           </div>
         </div>
@@ -43,7 +44,7 @@ export default component$(() => {
           <h2 className="text-2xl font-bold">Meeting Minutes</h2>
           {data.value.meetingMinutes.map((meetingMinute) => {
             return (
-              <DocumentLink key={meetingMinute._id} document={meetingMinute} />
+              <DocumentLink document={meetingMinute} key={meetingMinute._id} />
             );
           })}
         </div>
