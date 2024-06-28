@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ethang/project-builder':
-        specifier: ^1.1.40
-        version: 1.1.40(chalk@5.3.0)(inquirer@9.3.1)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.25.0)(tsup@8.1.0(postcss@8.4.38)(typescript@5.5.2))(typescript@5.5.2)
+        specifier: ^1.1.41
+        version: 1.1.41(chalk@5.3.0)(inquirer@9.3.1)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.25.0)(tsup@8.1.0(postcss@8.4.38)(typescript@5.5.2))(typescript@5.5.2)
       '@ethang/toolbelt':
         specifier: ^3.0.7
         version: 3.0.7(@phensley/cldr@1.8.1)(@phensley/unit-converter@1.8.1)(@total-typescript/ts-reset@0.5.1)(idb@8.0.0)(lodash@4.17.21)(zod@3.23.8)
@@ -76,8 +76,8 @@ importers:
         specifier: ^8.56.10
         version: 8.56.10
       '@types/lodash':
-        specifier: ^4.17.5
-        version: 4.17.5
+        specifier: ^4.17.6
+        version: 4.17.6
       '@types/luxon':
         specifier: ^3.4.2
         version: 3.4.2
@@ -515,8 +515,8 @@ packages:
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
 
-  '@eslint-community/regexpp@4.10.1':
-    resolution: {integrity: sha512-Zm2NGpWELsQAD1xsJzGQpYfvICSsFkEpU0jxBjfdC6uNEWXcHnfs9hScFWtXVDVl+rBQJGrl4g1vcKIejpH9dA==}
+  '@eslint-community/regexpp@4.11.0':
+    resolution: {integrity: sha512-G/M/tIiMrTAxEWRfLfQJMmGNX28IxBg4PBz8XqQhqUHLFI6TL2htpIB1iQCj144V5ee/JaKyT9/WZ0MGZWfA7A==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
   '@eslint/config-array@0.16.0':
@@ -557,16 +557,16 @@ packages:
       typescript: ^5.5.2
       typescript-eslint: ^7.14.1
 
-  '@ethang/project-builder@1.1.40':
-    resolution: {integrity: sha512-V2G/N+ANYDKSSnt7dVeYD9kDbiOKjfWx92/D2RgeUzFjsBki361ZNEIWQqyw1h+D/aV5uLkpJ59qnNX0M5c/5g==}
+  '@ethang/project-builder@1.1.41':
+    resolution: {integrity: sha512-pPJtx2kOQO0Vpgd1VgsuIWCyv5OeejL7FqVEFIau6jU3rRtTl2hJ+43wsUI5/lT1kUDtvfIGXXjWrxqF0K3JGg==}
     peerDependencies:
       chalk: ^5.3.0
-      inquirer: ^9.2.23
+      inquirer: ^9.3.1
       lodash: ^4.17.21
       rimraf: ^5.0.7
       simple-git: ^3.25.0
       tsup: ^8.1.0
-      typescript: ^5.4.5
+      typescript: ^5.5.2
 
   '@ethang/toolbelt@3.0.7':
     resolution: {integrity: sha512-F9TkSj/bqBYluaKLAnik4FGuJN9gLVc3of/Npy5+WmxvmAuwkkvVZOIe8WIErbi5sxELx8vo21SRObTKqAOa9w==}
@@ -1883,8 +1883,8 @@ packages:
   '@types/lodash.debounce@4.0.9':
     resolution: {integrity: sha512-Ma5JcgTREwpLRwMM+XwBR7DaWe96nC38uCBDFKZWbNKD+osjVzdpnUSwBcqCptrp16sSOLBAUb50Car5I0TCsQ==}
 
-  '@types/lodash@4.17.5':
-    resolution: {integrity: sha512-MBIOHVZqVqgfro1euRDWX7OO0fBVUUMrN6Pwm8LQsz8cWhEpihlvR70ENj3f40j58TNxZaWv2ndSkInykNBBJw==}
+  '@types/lodash@4.17.6':
+    resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
 
   '@types/luxon@3.4.2':
     resolution: {integrity: sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==}
@@ -4863,7 +4863,7 @@ snapshots:
       eslint: 9.5.0
       eslint-visitor-keys: 3.4.3
 
-  '@eslint-community/regexpp@4.10.1': {}
+  '@eslint-community/regexpp@4.11.0': {}
 
   '@eslint/config-array@0.16.0':
     dependencies:
@@ -4911,7 +4911,7 @@ snapshots:
       typescript: 5.5.2
       typescript-eslint: 7.14.1(eslint@9.5.0)(typescript@5.5.2)
 
-  '@ethang/project-builder@1.1.40(chalk@5.3.0)(inquirer@9.3.1)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.25.0)(tsup@8.1.0(postcss@8.4.38)(typescript@5.5.2))(typescript@5.5.2)':
+  '@ethang/project-builder@1.1.41(chalk@5.3.0)(inquirer@9.3.1)(lodash@4.17.21)(rimraf@5.0.7)(simple-git@3.25.0)(tsup@8.1.0(postcss@8.4.38)(typescript@5.5.2))(typescript@5.5.2)':
     dependencies:
       chalk: 5.3.0
       inquirer: 9.3.1
@@ -7021,9 +7021,9 @@ snapshots:
 
   '@types/lodash.debounce@4.0.9':
     dependencies:
-      '@types/lodash': 4.17.5
+      '@types/lodash': 4.17.6
 
-  '@types/lodash@4.17.5': {}
+  '@types/lodash@4.17.6': {}
 
   '@types/luxon@3.4.2': {}
 
@@ -7070,7 +7070,7 @@ snapshots:
 
   '@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@9.5.0)(typescript@5.5.2))(eslint@9.5.0)(typescript@5.5.2)':
     dependencies:
-      '@eslint-community/regexpp': 4.10.1
+      '@eslint-community/regexpp': 4.11.0
       '@typescript-eslint/parser': 7.14.1(eslint@9.5.0)(typescript@5.5.2)
       '@typescript-eslint/scope-manager': 7.14.1
       '@typescript-eslint/type-utils': 7.14.1(eslint@9.5.0)(typescript@5.5.2)
@@ -7901,7 +7901,7 @@ snapshots:
   eslint-plugin-es-x@7.7.0(eslint@9.5.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
-      '@eslint-community/regexpp': 4.10.1
+      '@eslint-community/regexpp': 4.11.0
       eslint: 9.5.0
       eslint-compat-utils: 0.5.1(eslint@9.5.0)
 
@@ -8028,7 +8028,7 @@ snapshots:
   eslint@9.5.0:
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.5.0)
-      '@eslint-community/regexpp': 4.10.1
+      '@eslint-community/regexpp': 4.11.0
       '@eslint/config-array': 0.16.0
       '@eslint/eslintrc': 3.1.0
       '@eslint/js': 9.5.0
