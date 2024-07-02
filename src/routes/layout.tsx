@@ -33,6 +33,18 @@ export default component$(() => {
 
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={`{
+  "prerender": [{
+    "where": {
+      "href_matches": "/*"
+    },
+    "eagerness": "eager"
+  }]
+}
+`}
+        type="speculationrules"
+      />
       <Navigation imagesAmount={imagesAmount.value} pathName={pathname.value} />
       <main>
         <Slot />
