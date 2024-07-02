@@ -31,7 +31,7 @@ type EventProperties = {
   readonly usedDates: Set<unknown>;
 };
 
-const eventDateFormat = (date: string): string => {
+export const eventDateFormat = (date: string): string => {
   return DateTime.fromISO(date, { zone: "America/Chicago" }).toLocaleString({
     dateStyle: "medium",
     timeStyle: "short",
@@ -97,18 +97,14 @@ export function REvent({
                 width={20}
               />
             )}
-            {}
             <span>{eventDateFormat(data.startsAt)}</span>
-            {}
             <span>
               {data.endsAt === data.startsAt
                 ? ""
                 : ` - ${eventDateFormat(data.endsAt)}`}
             </span>
           </strong>
-          {}
           <br />
-          {}
           <div className="font-semibold">{data.title}</div>
         </CardHeader>
         {!lodash.isNil(data.description) && (

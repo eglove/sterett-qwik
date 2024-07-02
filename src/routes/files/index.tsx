@@ -26,11 +26,10 @@ export default component$(() => {
 
   return (
     <Container>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div class="grid gap-4 md:grid-cols-2">
         <div>
           <div>
-            {}
-            <h2 className="text-2xl font-bold">Files</h2>
+            <h2 class="text-2xl font-bold">Files</h2>
             {data.value.covenants.map((covenant) => {
               return <DocumentLink document={covenant} key={covenant._id} />;
             })}
@@ -40,8 +39,7 @@ export default component$(() => {
           </div>
         </div>
         <div>
-          {}
-          <h2 className="text-2xl font-bold">Meeting Minutes</h2>
+          <h2 class="text-2xl font-bold">Meeting Minutes</h2>
           {data.value.meetingMinutes.map((meetingMinute) => {
             return (
               <DocumentLink document={meetingMinute} key={meetingMinute._id} />
