@@ -20,19 +20,19 @@ const navUrls = [
   },
   {
     name: "News",
-    url: "/news",
+    url: "/news/",
   },
   {
     name: "Calendar",
-    url: "/calendar",
+    url: "/calendar/",
   },
   {
     name: "Files",
-    url: "/files",
+    url: "/files/",
   },
   {
     name: "Trustees",
-    url: "/trustees",
+    url: "/trustees/",
   },
 ];
 
