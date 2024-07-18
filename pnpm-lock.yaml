@@ -108,6 +108,9 @@ importers:
       eslint-plugin-qwik:
         specifier: ^1.7.1
         version: 1.7.1(eslint@9.7.0)
+      eslint-plugin-sonarjs:
+        specifier: 1.0.3
+        version: 1.0.3(eslint@9.7.0)
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
