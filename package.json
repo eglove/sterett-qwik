@@ -52,17 +52,17 @@
     "undici": "^6.19.2",
     "vite": "^5.3.4",
     "vite-tsconfig-paths": "^4.3.2",
-    "wrangler": "^3.65.0"
+    "wrangler": "^3.65.1"
   },
   "dependencies": {
-    "@ethang/project-builder": "^1.1.44",
+    "@ethang/project-builder": "^1.1.45",
     "@ethang/toolbelt": "^3.4.3",
     "@heroicons/react": "^2.1.5",
-    "@nextui-org/react": "^2.4.3",
+    "@nextui-org/react": "^2.4.6",
     "@portabletext/react": "^3.1.0",
     "@sanity/client": "^6.21.0",
     "@sanity/image-url": "^1.0.2",
-    "framer-motion": "^11.3.7",
+    "framer-motion": "^11.3.8",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
     "moment": "^2.30.1",
